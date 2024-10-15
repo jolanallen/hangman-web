@@ -7,10 +7,15 @@ import (
 )
 
 func Home(w http.ResponseWriter, r *http.Request) {
-	fmt.Fprintf(w, "HELLO\n")
+	fmt.Fprintf(w, "HOME\n")
 }
+func Jeu(w http.ResponseWriter, r *http.Request) {
+	fmt.Fprintf(w, "JEU")
+}
+
 
  func main() {
 	http.HandleFunc("/Home", Home)
+	http.HandleFunc("/Jeu", Jeu)
 	http.ListenAndServe(":8080", nil)
  }
