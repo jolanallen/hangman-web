@@ -1,0 +1,3 @@
+[submodule "hangman-classique"]
+	path = hangman-classique
+	url = https://github.com/jolanallen/hangman-classic.git
