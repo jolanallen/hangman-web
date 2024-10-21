@@ -71,14 +71,14 @@ func (hangman *HANGMAN) intiwordlist() {
 	wordFile, err := os.Open(hangman.wordFile)  /// Ouvre le fichier de la liste de mots.
 	if err != nil {
 		fmt.Println("Erreur ouverture fichier:", err)  /// Affiche une erreur si le fichier ne peut être ouvert.
-		wordFile.Close()
+		defer wordFile.Close()
 	}
 	if err == nil {
 		scanner := bufio.NewScanner(wordFile)
 		for scanner.Scan() { 
 			hangman.TabMots = append(hangman.TabMots, scanner.Text())  /// Ajoute chaque mot du fichier à la liste `TabMots`.
 		}
-		wordFile.Close()  /// Ferme le fichier après lecture.
+		defer wordFile.Close()  /// Ferme le fichier après lecture.
 	}
 }
 

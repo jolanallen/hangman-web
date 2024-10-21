@@ -1,16 +1,18 @@
 package hangmanweb
 
 import (
+	//"fmt"
 	hangman "hangmanweb/back/hangman-classique/GAME"
-	"net/http"
 	"html/template"
+	"net/http"
 )
-var templates *template.Template
+var tmpl *template.Template
 var hc hangman.HANGMAN
 
 func Home(w http.ResponseWriter,r *http.Request) {
-	templates.ExecuteTemplate(w, "Home.html", nil)
+	
 }
+
 func Play(w http.ResponseWriter,r *http.Request) {
-	templates.ExecuteTemplate(w, "Play.html", nil)
+	//tmpl.Execute(w, "web/templates/Play.html")
 }
