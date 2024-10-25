@@ -1,7 +1,9 @@
 package hangmanweb
 
 
-
+import (
+	"net/http"
+)
 
 
 
@@ -9,7 +11,11 @@ package hangmanweb
 
 type HANGMANWEB struct {
 	CheminTemplate string
-	Donnees interface{}
+	Donnees        interface{}
+	rw             http.ResponseWriter
+	r             *http.Request
+	cheminTemplate string
+	
 	
 
 }
