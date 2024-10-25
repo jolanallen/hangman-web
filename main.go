@@ -9,6 +9,11 @@ import (
 func main() {
 	fmt.Println("Serveur démarré sur http://localhost:8080")
 	web:= &hangmanweb.HANGMANWEB{}
+	http.Handle("/utiles/", http.StripPrefix("/utiles/", http.FileServer(http.Dir("/home/jolan/hangman-web/web/utiles"))))
+
+	http.Handle("/css/", http.StripPrefix("/css/", http.FileServer(http.Dir("/home/jolan/hangman-web/web/css"))))
+
+
 
 	// Routes pour les pages de jeu
 	http.HandleFunc("/", web.Home)

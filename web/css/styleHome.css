@@ -1,0 +1,35 @@
+/* style.css */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f3f4f6; /* Couleur de fond par défaut */
+    color: #333;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-image: url('/utiles/HANGMAN-WEB(1).png'); /* Ajouter l'image de fond */
+    background-size: cover; /* Ajuste l'image pour couvrir tout l'arrière-plan */
+    background-position: center; /* Centre l'image de fond */
+    background-repeat: no-repeat; /* Ne pas répéter l'image */
+}
+
+
+.start-button {
+    display: inline-block;
+    padding: 20px 20px;
+    background-color: #4CAF50;
+    color: white;
+    font-weight: bold;
+    text-decoration: color-mix(in srgb, color percentage, color percentage);
+    border-radius: 10px;
+    transition: background-color 0.3s ease;
+}
+
+
