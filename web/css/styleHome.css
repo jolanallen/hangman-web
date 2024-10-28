@@ -7,9 +7,6 @@
 }
 
 body {
-<<<<<<< HEAD:web/css/Styleendgame.css
-    background-image: url('/utiles/Background.png'); /* Ajouter l'image de fond */
-=======
     font-family: Arial, sans-serif;
     background-color: #f3f4f6; /* Couleur de fond par défaut */
     color: #333;
@@ -17,8 +14,7 @@ body {
     justify-content: center;
     align-items: center;
     height: 100vh;
-    background-image: url('/web/utiles/Background.png'); /* Ajouter l'image de fond */
->>>>>>> 81f6e28 (background):web/css/styleendgame.css
+    background-image: url('/web/utiles/Home.png'); /* Ajouter l'image de fond */
     background-size: cover; /* Ajuste l'image pour couvrir tout l'arrière-plan */
     background-position: center; /* Centre l'image de fond */
     background-repeat: no-repeat; /* Ne pas répéter l'image */
@@ -27,11 +23,13 @@ body {
 
 .start-button {
     display: inline-block;
-    padding: 10px 20px;
+    padding: 20px 20px;
     background-color: #4CAF50;
     color: white;
     font-weight: bold;
-    text-decoration: none;
-    border-radius: 5px;
+    text-decoration: color-mix(in srgb, color percentage, color percentage);
+    border-radius: 10px;
     transition: background-color 0.3s ease;
 }
+
+
