@@ -9,8 +9,8 @@ import (
 
 var hc *hangman.HANGMAN
 var Donnees = Data{
-	//Essai: hc.Erreur,
-	Mot: hc.Mot,
+	Essai: 0,
+	Mot: "fuck",
 
 }
 
@@ -33,4 +33,3 @@ func (h *HANGMANWEB) Loose(w http.ResponseWriter, r *http.Request) {
 	tmpl := template.Must(template.ParseFiles("./web/templates/Loose.html"))
 	tmpl.Execute(w, Donnees)
 }
-
