@@ -2,19 +2,20 @@ package hangmanweb
 
 
 import (
-	"net/http"
+	
 )
 
 
-
+type Data struct {
+	Essai   int
+	Mot     string
+}
 
 
 type HANGMANWEB struct {
 	CheminTemplate string
 	Donnees        interface{}
-	rw             http.ResponseWriter
-	r             *http.Request
-	cheminTemplate string
+	
 	
 	
 
