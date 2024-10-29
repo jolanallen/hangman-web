@@ -12,10 +12,10 @@ import (
 
 
 func (hangman *HANGMAN) Init() {
-		hangman.drawDisplay()
-		hangman.intiwordlist()
-		hangman.initHangman()
-		hangman.randomWord()
+		//hangman.DrawDisplay()
+		hangman.Intiwordlist()
+		hangman.InitHangman()
+		hangman.RandomWord()
 }
 func (hangman *HANGMAN) Flag() {
 	help := flag.Bool("h", false, "Afficher de l'aide")  /// flag pour afficher l'aide
@@ -36,25 +36,25 @@ func (hangman *HANGMAN) Flag() {
 	}
 }
 
-func (hangman *HANGMAN) drawDisplay() {
-	fmt.Println("Bienvenue dans le HANGMAN Ynov 2024 B1 Info Montpellier )")
-	fmt.Println("---------------------------------------------------------------------------------------------------------------------------------------------")
-	fmt.Println((`																													 
-					 __ __   ____  ____    ____  ___ ___   ____  ____  				\ / |\ | / \ \  /
-   					|  |  | /    ||    \  /    ||   |   | /    ||    \ 				 |  | \| \_/  \/
-   					|  |  ||  o  ||  _  ||   __|| _   _ ||  o  ||  _  |
-   					|  _  ||     ||  |  ||  |  ||  \_/  ||     ||  |  |
-   					|  |  ||  _  ||  |  ||  |_ ||   |   ||  _  ||  |  |
-   					|  |  ||  |  ||  |  ||     ||   |   ||  |  ||  |  |
-   					|__|__||__|__||__|__||___,_||___|___||__|__||__|__|
-	   `))
-	fmt.Println("                                                   	  ")
-	fmt.Println("					                     Bienvenue !						  ")
-	fmt.Println("                                                   	  ")
-	fmt.Println("---------------------------------------------------------------------------------------------------------------------------------------------")
-}
+// func (hangman *HANGMAN) DrawDisplay() {
+// 	fmt.Println("Bienvenue dans le HANGMAN Ynov 2024 B1 Info Montpellier )")
+// 	fmt.Println("---------------------------------------------------------------------------------------------------------------------------------------------")
+// 	fmt.Println((`																													 
+// 					 __ __   ____  ____    ____  ___ ___   ____  ____  				\ / |\ | / \ \  /
+//    					|  |  | /    ||    \  /    ||   |   | /    ||    \ 				 |  | \| \_/  \/
+//    					|  |  ||  o  ||  _  ||   __|| _   _ ||  o  ||  _  |
+//    					|  _  ||     ||  |  ||  |  ||  \_/  ||     ||  |  |
+//    					|  |  ||  _  ||  |  ||  |_ ||   |   ||  _  ||  |  |
+//    					|  |  ||  |  ||  |  ||     ||   |   ||  |  ||  |  |
+//    					|__|__||__|__||__|__||___,_||___|___||__|__||__|__|
+// 	   `))
+// 	fmt.Println("                                                   	  ")
+// 	fmt.Println("					                     Bienvenue !						  ")
+// 	fmt.Println("                                                   	  ")
+// 	fmt.Println("---------------------------------------------------------------------------------------------------------------------------------------------")
+// }
 
-func (hangman *HANGMAN) intiwordlist() {
+func (hangman *HANGMAN) Intiwordlist() {
 	if hangman.medium {
 		hangman.wordFile = "utile/wordlist/words2.txt"  /// Utilise une liste de mots intermédiaires pour le mode médium.
 		fmt.Println("mode de jeu : intermédiaire")
@@ -82,7 +82,7 @@ func (hangman *HANGMAN) intiwordlist() {
 	}
 }
 
-func (hangman *HANGMAN) randomWord() {
+func (hangman *HANGMAN) RandomWord() {
 	rand.Seed(time.Now().UnixMilli())               /// Utilise la date du jour  pour générer un nombre aléatoire unixmili correspond a la date de reférence de Unix 01/01/1970
 	hangman.randomNb = rand.Intn(len(hangman.TabMots))                
 	hangman.Mot = hangman.TabMots[hangman.randomNb]             /////// Sélectionne le mot à deviner à partir du nombre aléatoire dans le tableau de mots 
@@ -100,8 +100,8 @@ func (hangman *HANGMAN) randomWord() {
 	hangman.IsRunning = true                     /// Indique que le jeu est en cours.
 }
 
-func (hangman *HANGMAN) initHangman() {
-	hangman.erreur = 0                                         /// Initialise le compteur d'erreurs à 0.
+func (hangman *HANGMAN) InitHangman() {
+	hangman.Erreur = 0                                         /// Initialise le compteur d'erreurs à 0.
 
 	hangFile, err := os.Open("utile/hangman/hangman.txt")  /// Ouvre le fichier contenant les états du pendu.
 	if err != nil {

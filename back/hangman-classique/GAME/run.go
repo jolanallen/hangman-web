@@ -54,7 +54,7 @@ func (hangman *HANGMAN) readletter() {
             if String == normalize(strings.Join(hangman.MotAdeviner, "")) { // Compare avec le mot normalisé
                 hangman.win()
             } else {
-                hangman.erreur += 2
+                hangman.Erreur += 2
             }
         } else if len(String) == 1 {
             hangman.lettre = String
@@ -76,9 +76,9 @@ func (hangman *HANGMAN) testLetter() {
         }
     }
     if !hangman.lettreIsGood {
-        hangman.erreur++
+        hangman.Erreur++
     }
-    if hangman.erreur >= 9 {
+    if hangman.Erreur >= 9 {
         hangman.gameOver()
     }
 }
@@ -94,7 +94,7 @@ func (hangman *HANGMAN) testword() {
     if hangman.wordIsGood {
         hangman.win()
     }
-    if hangman.erreur >= 9 {
+    if hangman.Erreur >= 9 {
         hangman.gameOver()
     }
 }

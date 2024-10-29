@@ -14,7 +14,7 @@ type HANGMAN struct {          // vatiable utiliser dans la structure du jeu
 	etat          strings.Builder
 	motIconnu     []string
 	randomNb      int
-	erreur       int
+	Erreur       int
 	lettreIsGood bool
 	wordFile     string
 	lettre       string

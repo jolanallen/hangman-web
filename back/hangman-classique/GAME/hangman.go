@@ -16,44 +16,44 @@ func (hangman *HANGMAN) Hangman() {
   var etat8 = hangman.TabHang[8]
   var etat9 = hangman.TabHang[9]
  
-  if hangman.erreur == 0 {
+  if hangman.Erreur == 0 {
     fmt.Println("                        Lettres déja utilisées :", hangman.UsedLetter)
-    fmt.Println(etat0, "                       Attempts :", hangman.erreur, "/9")
+    fmt.Println(etat0, "                       Attempts :", hangman.Erreur, "/9")
   }
-  if hangman.erreur == 1 {
+  if hangman.Erreur == 1 {
     fmt.Println("                        Lettres déja utilisées :", hangman.UsedLetter)
-    fmt.Println(etat1, "                       Attempts :", hangman.erreur, "/9")
+    fmt.Println(etat1, "                       Attempts :", hangman.Erreur, "/9")
   }
-  if hangman.erreur == 2 {
+  if hangman.Erreur == 2 {
     fmt.Println("                        Lettres déja utilisées :", hangman.UsedLetter)
-    fmt.Println(etat2, "                       Attempts :", hangman.erreur, "/9")
+    fmt.Println(etat2, "                       Attempts :", hangman.Erreur, "/9")
   }
-  if hangman.erreur == 3 {
+  if hangman.Erreur == 3 {
     fmt.Println("                        Lettres déja utilisées :", hangman.UsedLetter)
-    fmt.Println(etat3, "                       Attempts :", hangman.erreur, "/9")
+    fmt.Println(etat3, "                       Attempts :", hangman.Erreur, "/9")
   }
-  if hangman.erreur == 4 {
+  if hangman.Erreur == 4 {
     fmt.Println("                        Lettres déja utilisées :", hangman.UsedLetter)
-    fmt.Println(etat4, "                       Attempts :", hangman.erreur, "/9")
+    fmt.Println(etat4, "                       Attempts :", hangman.Erreur, "/9")
   }
-  if hangman.erreur == 5 {
+  if hangman.Erreur == 5 {
     fmt.Println("                        Lettres déja utilisées :", hangman.UsedLetter)
-    fmt.Println(etat5, "                       Attempts :", hangman.erreur, "/9")
+    fmt.Println(etat5, "                       Attempts :", hangman.Erreur, "/9")
   }
-  if hangman.erreur == 6 {
+  if hangman.Erreur == 6 {
     fmt.Println("                        Lettres déja utilisées :", hangman.UsedLetter)
-    fmt.Println(etat6, "                       Attempts :", hangman.erreur, "/9")
+    fmt.Println(etat6, "                       Attempts :", hangman.Erreur, "/9")
   }
-  if hangman.erreur == 7 {
+  if hangman.Erreur == 7 {
     fmt.Println("                        Lettres déja utilisées :", hangman.UsedLetter)
-    fmt.Println(etat7, "                       Attempts :", hangman.erreur, "/9")
+    fmt.Println(etat7, "                       Attempts :", hangman.Erreur, "/9")
   }
-  if hangman.erreur == 8 {
+  if hangman.Erreur == 8 {
     fmt.Println("                        Lettres déja utilisées :", hangman.UsedLetter)
-    fmt.Println(etat8, "                       Attempts :", hangman.erreur, "/9")
+    fmt.Println(etat8, "                       Attempts :", hangman.Erreur, "/9")
   }
-  if hangman.erreur == 9 {
+  if hangman.Erreur == 9 {
     fmt.Println("                        Lettres déja utilisées :", hangman.UsedLetter)
-    fmt.Println(etat9, "                       Attempts :", hangman.erreur, "/9")
+    fmt.Println(etat9, "                       Attempts :", hangman.Erreur, "/9")
   }
 }

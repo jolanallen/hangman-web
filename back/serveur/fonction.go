@@ -1,5 +1,12 @@
 package hangmanweb
 
-import (
+import(
 	
-)
+) 
+
+
+func (h *HANGMANWEB)Mot() {
+	// hc.Intiwordlist()
+	// hc.RandomWord()
+	
+}
