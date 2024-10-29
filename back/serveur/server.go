@@ -10,7 +10,7 @@ import (
 var hc *hangman.HANGMAN
 var Donnees = Data{
 	//Essai: hc.Erreur,
-	Mot: hc.Mot,
+	//Mot: hc.Mot,
 
 }
 
