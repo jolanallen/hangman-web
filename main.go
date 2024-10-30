@@ -10,12 +10,12 @@ var hc *hangman.HANGMAN
 var web *hangmanweb.HANGMANWEB
 
 func main() {
-	web.Mot()
 	fmt.Println("Serveur démarré sur http://localhost:8080")
-	
-	http.Handle("/utiles/", http.StripPrefix("/utiles/", http.FileServer(http.Dir("/web/utiles"))))
+	css := http.FileServer(http.Dir("./web/css"))
+	http.Handle("/css/", http.StripPrefix("/css/", css))
+	photo := http.FileServer(http.Dir("./web/utiles"))
+	http.Handle("/utiles/", http.StripPrefix("/utiles/", photo))
 
-	http.Handle("/css/", http.StripPrefix("/css/", http.FileServer(http.Dir("/web/css"))))
 
 	// Routes pour les pages de jeu
 	http.HandleFunc("/", web.Home)
