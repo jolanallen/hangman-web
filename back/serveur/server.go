@@ -11,6 +11,8 @@ var hc *hangman.HANGMAN
 var Donnees = Data{
 	Essai: 0,
 	Mot: "fuck",
+	//Essai: hc.Erreur,
+	//Mot: hc.Mot,
 
 }
 
