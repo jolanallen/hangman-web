@@ -1,8 +1,6 @@
 package hangmanweb
 
-import(
-	
-) 
+
 
 
 func (h *HANGMANWEB)Mot() {
@@ -10,3 +8,5 @@ func (h *HANGMANWEB)Mot() {
 	// hc.RandomWord()
 	
 }
+
+
