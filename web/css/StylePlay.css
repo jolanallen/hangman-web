@@ -17,6 +17,11 @@ body {
     background-position: center; 
     background-repeat: no-repeat; 
 }
+.lettre-button {
+    padding: 10px 10px;
+    background-image: url('/utiles/A.png');
+}
+
 
 .start-button {
     display: inline-block;
