@@ -2,7 +2,9 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+    box-sizing: border-box;
 }
+h1 {
 h1 {
     text-align: center;
     position: relative;
@@ -15,11 +17,6 @@ h1 {
     bottom: 180px;
     right: 5px;
 }
-.img {
-    
-
-}
-
 body {
     font-family: Arial, sans-serif;
     background-color: #f3f4f6; 
@@ -73,7 +70,126 @@ body {
    
     background-size: 60px;
     background-image: url('/utiles/bouton_home.png');
+.bouton {
+    border-width: 0px;
+    background-color: transparent;
+    padding: 30px;
+    border-radius: 100px;
+    background-size: 80px;
+    background-position: center;
+    background-repeat: no-repeat;
+    transition: background-image 0.5s;
+    cursor: pointer;
+    
 }
+.lettre-bouton {
+    position: relative;
+	left: 30px;
+    top: 100px;
+    
+}
+.bouton:hover {
+    opacity: 0.5;
+}
+
+#replay {
+    position: relative;
+    bottom: 200px;
+    background-size: 60px;
+    background-image: url('/utiles/bouton_Restart.png')
+    
+    
+}
+#maison {
+    position: relative;
+    bottom: 200px;
+   
+    background-size: 60px;
+    background-image: url('/utiles/bouton_home.png');
+}
+#A {
+    background-image: url('/utiles/A.png');
+}
+#B {
+    background-image: url('/utiles/B.png');
+}
+#C {
+    background-image: url('/utiles/C.png');
+}
+#D {
+    background-image: url('/utiles/D.png');
+}
+#E {
+    background-image: url('/utiles/E.png');
+}
+#F {
+    background-image: url('/utiles/F.png');
+}
+#G {
+    background-image: url('/utiles/G.png');
+}
+#H {
+    background-image: url('/utiles/H.png');
+}
+#I {
+    background-image: url('/utiles/I.png');
+}
+#J {
+    background-image: url('/utiles/J.png');
+}
+#K {
+    background-image: url('/utiles/K.png');
+}
+#L {
+    background-image: url('/utiles/L.png');
+}
+#M {
+    background-image: url('/utiles/M.png');
+}
+#N {
+    background-image: url('/utiles/N.png');
+}
+#O {
+    background-image: url('/utiles/O.png');
+}
+#P {
+    background-image: url('/utiles/P.png');
+}
+#Q {
+    background-image: url('/utiles/Q.png');
+}
+#R {
+    background-image: url('/utiles/R.png');
+}
+#S {
+    background-image: url('/utiles/S.png');
+}
+#T {
+    background-image: url('/utiles/T.png');
+}
+#U {
+    background-image: url('/utiles/U.png');
+}
+#V {
+    background-image: url('/utiles/V.png');
+}
+#W {
+    background-image: url('/utiles/W.png');
+}
+#X {
+    background-image: url('/utiles/X.png');
+}
+#Y {
+    background-image: url('/utiles/Y.png');
+}
+#Z {
+    background-image: url('/utiles/Z.png');
+}
+
+
+
+
+
 #A {
     background-image: url('/utiles/A.png');
 }

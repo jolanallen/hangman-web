@@ -27,7 +27,7 @@ func main() {
 	http.HandleFunc("/Win", web.Win)
 	http.HandleFunc("/Loose", web.Loose)
 	
-	
+
 	// Démarrage du serveur sur le port 8080
 	err := http.ListenAndServe(":8080", nil)
 	if err != nil {
