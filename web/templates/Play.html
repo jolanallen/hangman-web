@@ -12,63 +12,51 @@
     
         <div class="Head">
             <h1>Bienvenue au Jeu du Pendu !</h1>
-            <h2>Ynov campus montpellier</h2>
-        </div>
-        <nav class="information">
-            <section class="info">
-                <h4 id="essai">attemps : {{.Essai}} /9</h4>
-                <h3 id="motadeviner">mot a deviner : {{.Mot}}</h3>
-                <h3 id="motadeviner">mot motInconnu : {{.Find}}</h3>
-                <h3 id="usedletter">usedletter :</h3>
-                <p>Testez vos compétences en devinant les lettres et trouvez le mot caché avant que notre personnage ne soit pendu !</p>
-            </section>
-
-            <section class="dev">
-                <a href="/Win" id="Win">WINNNNN</a>
-                <a href="/Loose" id="Loose">Loooooooose</a>
-            </section>
-        </nav>
-
-        <section class="boutonDeMenu">
-            <form action="/Home" method="get"><button class="bouton-menu" id="maison" type="submit" value=""></button></form>
-            <form action="/hangman" method="get"><button class="bouton-menu" id="replay" type="submit" value=""></button></form>
+            <h4 id="essai">attemps : {{.Essai}} /9</h4>
+            <h3 id="motadeviner">mot a deviner : {{.Mot}}</h3>
+        </header>
+        <section classe="menu-bouton">
+            <a href="/Home" class="bouton" id="maison"></a>
+            <a href="/Play"class="bouton" id="replay"></a>
         </section>
         
-        <form class="clavier" action="/hangman" method="post">
-            <div class="clavier1">
-                <button class="bouton" id="A" name="a" type="submit" value=""></button>
-                <button class="bouton" id="B" name="b" type="submit" value=""></button>
-                <button class="bouton" id="C" name="c" type="submit" value=""></button>
-                <button class="bouton" id="D" name="d" type="submit" value=""></button>
-                <button class="bouton" id="E" name="e" type="submit" value=""></button>
-                <button class="bouton" id="F" name="f" type="submit" value=""></button>
-                <button class="bouton" id="G" name="g" type="submit" value=""></button>
-                <button class="bouton" id="H" name="h" type="submit" value=""></button>
-                <button class="bouton" id="I" name="i" type="submit" value=""></button>
-                <button class="bouton" id="J" name="j" type="submit" value=""></button>
-                <button class="bouton" id="K" name="k" type="submit" value=""></button>
-                <button class="bouton" id="L" name="l" type="submit" value=""></button>
-                
-            </div>
-            <div class="clavier2">
-                <button class="bouton" id="M" name="m" type="submit" value=""></button>
-                <button class="bouton" id="N" name="n" type="submit" value=""></button>
-                <button class="bouton" id="O" name="o" type="submit" value=""></button>
-                <button class="bouton" id="P" name="p" type="submit" value=""></button>
-                <button class="bouton" id="Q" name="q" type="submit" value=""></button>
-                <button class="bouton" id="R" name="r" type="submit" value=""></button>
-                <button class="bouton" id="S" name="s" type="submit" value=""></button>
-                <button class="bouton" id="T" name="t" type="submit" value=""></button>
-                <button class="bouton" id="U" name="u" type="submit" value=""></button>
-
-            </div>
-            <div class="clavier3">
-                <button class="bouton" id="V" name="v" type="submit" value=""></button>
-                <button class="bouton" id="W" name="w" type="submit" value=""></button>
-                <button class="bouton" id="X" name="x" type="submit" value=""></button>
-                <button class="bouton" id="Y" name="y" type="submit" value=""></button>
-                <button class="bouton" id="Z" name="z" type="submit" value=""></button>
-            </div>
-        </form>
+        <section class="intro">
+            <p>Testez vos compétences en devinant les lettres et trouvez le mot caché avant que notre personnage ne soit pendu !</p>
+        </section>
+        <section class="start">
+            <a href="/Win" class="start-button">WINNNNN</a>
+            <a href="/Loose" class="start-button">Loooooooose</a>
+        </section>
+        <section class="lettre-bouton">
+            <button class="bouton" id="A"></button>
+            <button class="bouton" id="B"></button>
+            <button class="bouton" id="C"></button>
+            <button class="bouton" id="D"></button>
+            <button class="bouton" id="E"></button>
+            <button class="bouton" id="F"></button>
+            <button class="bouton" id="G"></button>
+            <button class="bouton" id="H"></button>
+            <button class="bouton" id="I"></button>
+            <button class="bouton" id="J"></button>
+            <button class="bouton" id="K"></button>
+            <button class="bouton" id="L"></button>
+            <button class="bouton" id="M"></button>
+            <button class="bouton" id="N"></button>
+            <button class="bouton" id="O"></button>
+            <button class="bouton" id="P"></button>
+            <button class="bouton" id="Q"></button>
+            <button class="bouton" id="R"></button>
+            <button class="bouton" id="S"></button>
+            <button class="bouton" id="T"></button>
+            <button class="bouton" id="U"></button>
+            <button class="bouton" id="V"></button>
+            <button class="bouton" id="W"></button>
+            <button class="bouton" id="X"></button>
+            <button class="bouton" id="Y"></button>
+            <button class="bouton" id="Z"></button>
+            
+        </section>
+        
+    </div>
 </body>
 </html>
