@@ -11,21 +11,51 @@
     <div class="container">
         <header>
             <h1>Bienvenue au Jeu du Pendu !</h1>
-            <h4>attemps : {{.Essai}} /9</h4>
-            <h3>mot a deviner : {{.Mot}}</h3>
+            <h4 id="essai">attemps : {{.Essai}} /9</h4>
+            <h3 id="motadeviner">mot a deviner : {{.Mot}}</h3>
         </header>
+        <section classe="menu-bouton">
+            <a href="/Home" class="bouton" id="maison"></a>
+            <a href="/Play"class="bouton" id="replay"></a>
+        </section>
         
         <section class="intro">
             <p>Testez vos compétences en devinant les lettres et trouvez le mot caché avant que notre personnage ne soit pendu !</p>
         </section>
-        <input type="image" id="lettre-button"  src="/utiles/A.png" />
-        
-
         <section class="start">
-            <a href="Play" class="lettre button"></a>
             <a href="/Win" class="start-button">WINNNNN</a>
             <a href="/Loose" class="start-button">Loooooooose</a>
         </section>
+        <section class="lettre-bouton">
+            <button class="bouton" id="A"></button>
+            <button class="bouton" id="B"></button>
+            <button class="bouton" id="C"></button>
+            <button class="bouton" id="D"></button>
+            <button class="bouton" id="E"></button>
+            <button class="bouton" id="F"></button>
+            <button class="bouton" id="G"></button>
+            <button class="bouton" id="H"></button>
+            <button class="bouton" id="I"></button>
+            <button class="bouton" id="J"></button>
+            <button class="bouton" id="K"></button>
+            <button class="bouton" id="L"></button>
+            <button class="bouton" id="M"></button>
+            <button class="bouton" id="N"></button>
+            <button class="bouton" id="O"></button>
+            <button class="bouton" id="P"></button>
+            <button class="bouton" id="Q"></button>
+            <button class="bouton" id="R"></button>
+            <button class="bouton" id="S"></button>
+            <button class="bouton" id="T"></button>
+            <button class="bouton" id="U"></button>
+            <button class="bouton" id="V"></button>
+            <button class="bouton" id="W"></button>
+            <button class="bouton" id="X"></button>
+            <button class="bouton" id="Y"></button>
+            <button class="bouton" id="Z"></button>
+            
+        </section>
+        
     </div>
 </body>
 </html>
