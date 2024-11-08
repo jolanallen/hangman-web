@@ -14,12 +14,17 @@
             <h1>Bienvenue au Jeu du Pendu !</h1>
             <h4 id="essai">attemps : {{.Essai}} /9</h4>
             <h3 id="motadeviner">mot a deviner : {{.Mot}}</h3>
+            <h3 id="motadeviner">mot motInconnu : {{.Find}}</h3>
+
         </header>
+        <section class="body">
+            <img src="utiles/etat1.png" alt="" class="hangman">
+        </section>
         <section classe="menu-bouton">
             <a href="/Home" class="bouton" id="maison"></a>
             <a href="/Play"class="bouton" id="replay"></a>
         </section>
-        
+
         <section class="intro">
             <p>Testez vos compétences en devinant les lettres et trouvez le mot caché avant que notre personnage ne soit pendu !</p>
         </section>
