@@ -1,6 +1,6 @@
 package hangman
 
-import "strings"
+//import "strings"
 
 
 
@@ -11,15 +11,15 @@ type HANGMAN struct {          // vatiable utiliser dans la structure du jeu
 	Mot           string
 	MotAdeviner   []string
 	TabHang       []string
-	etat          strings.Builder
-	motIconnu     []string
+	// etat          strings.Builder
+	MotIconnu     []string
 	randomNb      int
 	Erreur       int
 	lettreIsGood bool
-	wordFile     string
+	//wordFile     string
 	lettre       string
 	UsedLetter   []string
-	medium       bool
-	hard         bool
+	//medium       bool
+	//hard         bool
 }
 

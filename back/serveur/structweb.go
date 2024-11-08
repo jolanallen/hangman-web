@@ -1,22 +1,19 @@
 package hangmanweb
 
 
-import (
-	
-)
 
 
-type Data struct {
+
+type Donnees struct {
 	Essai   int
 	Mot     string
+	Find string
+
 }
 
 
 type HANGMANWEB struct {
-	CheminTemplate string
-	Donnees        interface{}
 	
-	
-	
+
 
 }

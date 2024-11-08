@@ -43,7 +43,7 @@ func (hangman *HANGMAN) Run() {
 }
 
 func (hangman *HANGMAN) readletter() {
-    fmt.Println(hangman.motIconnu)
+    fmt.Println(hangman.MotIconnu)
     var Reader = bufio.NewReader(os.Stdin)
     String, _ := Reader.ReadString('\n')
     String = strings.TrimSpace(String)
@@ -72,7 +72,7 @@ func (hangman *HANGMAN) testLetter() {
     for l := range normalizedMotAdeviner {
         if hangman.lettre == string(normalizedMotAdeviner[l]) {
             hangman.lettreIsGood = true
-            hangman.motIconnu[l] = hangman.MotAdeviner[l] // Utilise la lettre originale pour l'affichage
+            hangman.MotIconnu[l] = hangman.MotAdeviner[l] // Utilise la lettre originale pour l'affichage
         }
     }
     if !hangman.lettreIsGood {
@@ -85,8 +85,8 @@ func (hangman *HANGMAN) testLetter() {
 
 func (hangman *HANGMAN) testword() {
     hangman.wordIsGood = true
-    for l := range hangman.motIconnu {
-        if hangman.motIconnu[l] == "_" {
+    for l := range hangman.MotIconnu {
+        if hangman.MotIconnu[l] == "_" {
             hangman.wordIsGood = false
             break
         }
