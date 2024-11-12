@@ -66,7 +66,17 @@ html {
 #maison {
     background-image: url('/utiles/bouton_home.png');
 }
+.image-container {
+    text-align: center; 
+    margin: 20px 0;
+}
 
+.pendu-image {
+    max-width: 100%; 
+    height: auto; 
+    display: block; 
+    margin: 0 auto; 
+}
 
 .bouton {
     border-width: 0px;
