@@ -1,75 +1,109 @@
 * {
     margin: 0;
     padding: 0;
-    box-sizing: border-box;
-}
-h1 {
-    text-align: center;
-    position: relative;
-    bottom: 130px;
-   
-}
-#essai {
-    position: relative;
-    text-align: right;
-    bottom: 180px;
-    right: 5px;
-}
-.img {
     
-
 }
-
-body {
-    font-family: Arial, sans-serif;
-    background-color: #f3f4f6; 
-    color: #333;
-    display: flex;
-    justify-content: center;
-    align-items: center;
+.information {
+    background-color: black;
+    width: 353px;
+    text-align: center;
+}
+html {
     height: 100vh;
     background-image: url('/utiles/Background.png'); 
     background-size: cover; 
     background-position: center; 
-    background-repeat: no-repeat; 
 }
-.bouton {
+.Head {
+    background-color: rosybrown;
+    text-align: center;
+    width: 1850px;
+}
+.info {
+    background-color: grey;
+}
+.dev {
+    background-color: #4CAF50;
+   
+   
+}
+
+.start-button {
+    display: inline-block;
+    padding: 10px 20px;
+    background-color: #4CAF50;
+    color: white;
+    font-weight: bold;
+    text-decoration: none;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+}
+
+.boutonDeMenu {
+    position: relative;
+    width: 110px;
+    left: 1730px;
+    bottom: 165px;
+}
+.bouton-menu {
     border-width: 0px;
     background-color: transparent;
-    padding: 30px;
+    padding: 55px;
     border-radius: 100px;
-    background-size: 80px;
+    background-size: 100px;
     background-position: center;
     background-repeat: no-repeat;
     transition: background-image 0.5s;
     cursor: pointer;
-    
+
 }
-.lettre-bouton {
-    position: relative;
-	left: 30px;
-    top: 100px;
-    
+.bouton-menu:hover {
+    opacity: 0.5;
+}
+#replay {
+    background-image: url('/utiles/bouton_Restart.png')
+}
+#maison {
+    background-image: url('/utiles/bouton_home.png');
+}
+
+
+.bouton {
+    border-width: 0px;
+    background-color: transparent;
+    padding: 65px;
+    border-radius: 100px;
+    background-size: 150px;
+    background-position: center;
+    background-repeat: no-repeat;
+    transition: background-image 0.5s;
+    cursor: pointer;
 }
 .bouton:hover {
     opacity: 0.5;
 }
 
-#replay {
+.clavier1 {
+    width: 1700px;
+    position: relative; 
+    left: 100px;
+    top:150px;
+ }
+ .clavier2 {
+    width: 1300px;
     position: relative;
-    bottom: 200px;
-    background-size: 60px;
-    background-image: url('/utiles/bouton_Restart.png')
-    
-    
-}
-#maison {
+    left: 300px;
+    top:150px;
+ }
+ .clavier3 {
+    width: 800px;
     position: relative;
-    bottom: 200px;
-   
-    background-size: 60px;
-    background-image: url('/utiles/bouton_home.png');
-}
+    left: 570px;
+    top:150px;
+ }
+
+
+
 #A {
     background-image: url('/utiles/A.png');
 }
@@ -150,21 +184,3 @@ body {
 }
 
 
-
-
-
-
-.start-button {
-    display: inline-block;
-    padding: 10px 20px;
-    background-color: #4CAF50;
-    color: white;
-    font-weight: bold;
-    text-decoration: none;
-    border-radius: 5px;
-    transition: background-color 0.3s ease;
-}
-h4 {
-    color:red;
-
-}

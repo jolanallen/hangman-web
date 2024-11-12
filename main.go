@@ -17,13 +17,16 @@ func main() {
 	http.Handle("/css/", http.StripPrefix("/css/", css))
 	photo := http.FileServer(http.Dir("./web/utiles"))
 	http.Handle("/utiles/", http.StripPrefix("/utiles/", photo))
+	js := http.FileServer(http.Dir("./web/js"))
+	http.Handle("/js/", http.StripPrefix("/js/", js))
 
 
 	// Routes pour les pages de jeu
 	http.HandleFunc("/", web.Home)
-	http.HandleFunc("/Play", web.Play)
+	http.HandleFunc("/hangman", web.Play)
 	http.HandleFunc("/Win", web.Win)
 	http.HandleFunc("/Loose", web.Loose)
+	//http.HandleFunc("/TestLetter", web.TestLetter)
 	
 	
 	// Démarrage du serveur sur le port 8080

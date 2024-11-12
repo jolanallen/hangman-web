@@ -18,19 +18,24 @@ func (h *HANGMANWEB) WebInit() {
 	
 	
 	fmt.Println(hc.Mot)
+	fmt.Println(hc.Erreur)
+	fmt.Println(Data.Usedletter)
 	Data.Mot = hc.Mot
 	Data.Essai = hc.Erreur
 	
 	
+	
 }
 
-func (h *HANGMANWEB) WebRun() {
+func (h* HANGMANWEB) Testletter() {
 
 }
+
 
 
 
 func (h *HANGMANWEB) StringTabConv() {
 	Data.Find = strings.Join(hc.MotIconnu, " ")
+	Data.Usedletter = strings.Join(hc.UsedLetter, " ")
 
 }
