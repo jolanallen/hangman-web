@@ -19,7 +19,7 @@
                 <h4 id="essai">attemps : {{.Essai}} /10</h4>
                 <h3 id="motadeviner">mot a deviner : {{.Mot}}</h3>
                 <h3 id="motadeviner">mot motInconnu : {{.Find}}</h3>
-                <h3 id="usedletter">usedletter :</h3>
+                <h3 id="usedletter">usedletter :{{.Usedletter}}</h3>
                 <p>Testez vos compétences en devinant les lettres et trouvez le mot caché avant que notre personnage ne soit pendu !</p>
             </section>
 
@@ -39,11 +39,11 @@
         
         <form class="clavier" action="/hangman" method="post">
             <div class="clavier1">
-                <button class="bouton" id="A" name="a" type="submit" value=""></button>
-                <button class="bouton" id="B" name="b" type="submit" value=""></button>
-                <button class="bouton" id="C" name="c" type="submit" value=""></button>
-                <button class="bouton" id="D" name="d" type="submit" value=""></button>
-                <button class="bouton" id="E" name="e" type="submit" value=""></button>
+                <button class="bouton" id="A" name="a" onclick="TestLetter('a')" type="submit" value=""></button>
+                <button class="bouton" id="B" name="b" onclick="TestLetter('b')" type="submit" value=""></button>
+                <button class="bouton" id="C" name="c" onclick="TestLetter('c')" type="submit" value=""></button>
+                <button class="bouton" id="D" name="d" onclick="TestLetter('d')" type="submit" value=""></button>
+                <button class="bouton" id="E" name="e" onclick="TestLetter('e')" type="submit" value=""></button>
                 <button class="bouton" id="F" name="f" type="submit" value=""></button>
                 <button class="bouton" id="G" name="g" type="submit" value=""></button>
                 <button class="bouton" id="H" name="h" type="submit" value=""></button>

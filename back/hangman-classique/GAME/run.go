@@ -52,7 +52,7 @@ func (hangman *HANGMAN) readletter() {
     if String >= "a" && String <= "z" {
         if len(String) > 1 {
             if String == normalize(strings.Join(hangman.MotAdeviner, "")) { // Compare avec le mot normalisé
-                hangman.win()
+               // hangman.win()
             } else {
                 hangman.Erreur += 2
             }
@@ -79,7 +79,7 @@ func (hangman *HANGMAN) testLetter() {
         hangman.Erreur++
     }
     if hangman.Erreur >= 9 {
-        hangman.gameOver()
+        //hangman.gameOver()
     }
 }
 
@@ -91,44 +91,44 @@ func (hangman *HANGMAN) testword() {
             break
         }
     }
-    if hangman.wordIsGood {
-        hangman.win()
-    }
-    if hangman.Erreur >= 9 {
-        hangman.gameOver()
-    }
+    // if hangman.wordIsGood {
+    //     //hangman.win()
+    // }
+    // if hangman.Erreur >= 10 {
+    //    // hangman.gameOver()
+    // }
 }
 
 
-func (hangman *HANGMAN) win() {
-		fmt.Println(`
- 		__     __          __          ___       _ 
- 		\ \   / /          \ \        / (_)     | |
-	 	 \ \_/ /__  _   _   \ \  /\  / / _ _ __ | |
- 	 	  \   / _ \| | | |   \ \/  \/ / | | '_ \| |
-  		   | | (_) | |_| |    \  /\  /  | | | | |_|
-  	 	   |_|\___/ \__,_|     \/  \/   |_|_| |_(_)
+// func (hangman *HANGMAN) win() {
+// 		fmt.Println(`
+//  		__     __          __          ___       _ 
+//  		\ \   / /          \ \        / (_)     | |
+// 	 	 \ \_/ /__  _   _   \ \  /\  / / _ _ __ | |
+//  	 	  \   / _ \| | | |   \ \/  \/ / | | '_ \| |
+//   		   | | (_) | |_| |    \  /\  /  | | | | |_|
+//   	 	   |_|\___/ \__,_|     \/  \/   |_|_| |_(_)
                                            
                                            
 
-		`)
-		fmt.Println("fin du jeu vous avez gagner le mot était bien", hangman.Mot)
-	hangman.IsRunning = false
+// 		`)
+// 		fmt.Println("fin du jeu vous avez gagner le mot était bien", hangman.Mot)
+// 	hangman.IsRunning = false
 	
-}
+// }
 
-func (hangman *HANGMAN) gameOver() {
-	fmt.Println(` 
-		   ____                          ___                 
-		  / ___| __ _ _ __ ___   ___    / _ \__   _____ _ __ 
-		 | |  _ / _' | '_ ' _ \ / _ \  | | | \ \ / / _ \ '__|
-		 | |_| | (_| | | | | | |  __/  | |_| |\ V /  __/ |
-	    	  \____|\__,_|_| |_| |_|\___|   \___/  \_/ \___|_|
+// func (hangman *HANGMAN) gameOver() {
+// 	fmt.Println(` 
+// 		   ____                          ___                 
+// 		  / ___| __ _ _ __ ___   ___    / _ \__   _____ _ __ 
+// 		 | |  _ / _' | '_ ' _ \ / _ \  | | | \ \ / / _ \ '__|
+// 		 | |_| | (_| | | | | | |  __/  | |_| |\ V /  __/ |
+// 	    	  \____|\__,_|_| |_| |_|\___|   \___/  \_/ \___|_|
                                                                                               
 
-	`)
+// 	`)
 
-	fmt.Println("fin du jeu le mot était : ", hangman.Mot)
-	hangman.IsRunning = false
+// 	fmt.Println("fin du jeu le mot était : ", hangman.Mot)
+// 	hangman.IsRunning = false
 	
-}
+// }

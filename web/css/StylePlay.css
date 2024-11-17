@@ -13,6 +13,7 @@ html {
     background-image: url('/utiles/Background.png'); 
     background-size: cover; 
     background-position: center; 
+    position: fixed;
 }
 .Head {
     background-color: rosybrown;
@@ -68,14 +69,16 @@ html {
 }
 .image-container {
     text-align: center; 
-    margin: 20px 0;
+    position: relative;
+    bottom: 500px;
 }
 
 .pendu-image {
     max-width: 100%; 
-    height: auto; 
+    height: 505px; 
     display: block; 
     margin: 0 auto; 
+    padding: 75px;
 }
 
 .bouton {
@@ -92,7 +95,10 @@ html {
 .bouton:hover {
     opacity: 0.5;
 }
-
+.clavier {
+    position: relative;
+    bottom: 650px;
+}
 .clavier1 {
     width: 1700px;
     position: relative; 
