@@ -24,7 +24,10 @@ html {
     background-color: grey;
 }
 .dev {
+    width: 353px;
+    position: relative;
     background-color: #4CAF50;
+    z-index: 2;
    
    
 }
@@ -45,6 +48,7 @@ html {
     width: 110px;
     left: 1730px;
     bottom: 165px;
+    z-index: 2;
 }
 .bouton-menu {
     border-width: 0px;
@@ -56,6 +60,7 @@ html {
     background-repeat: no-repeat;
     transition: background-image 0.5s;
     cursor: pointer;
+    z-index: 2;
 
 }
 .bouton-menu:hover {
@@ -71,6 +76,7 @@ html {
     text-align: center; 
     position: relative;
     bottom: 500px;
+    z-index: 1;
 }
 
 .pendu-image {
@@ -79,6 +85,7 @@ html {
     display: block; 
     margin: 0 auto; 
     padding: 75px;
+    z-index: 1;
 }
 
 .bouton {
@@ -98,24 +105,28 @@ html {
 .clavier {
     position: relative;
     bottom: 650px;
+    z-index: 2;
 }
 .clavier1 {
     width: 1700px;
     position: relative; 
     left: 100px;
     top:150px;
+    z-index: 2;
  }
  .clavier2 {
     width: 1300px;
     position: relative;
     left: 300px;
     top:150px;
+    z-index: 2;
  }
  .clavier3 {
     width: 800px;
     position: relative;
     left: 570px;
     top:150px;
+    z-index: 2;
  }
 
 
