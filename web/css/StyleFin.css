@@ -25,9 +25,9 @@ body {
 .bouton-menu {
     border-width: 0px;
     background-color: transparent;
-    padding: 44px;
+    padding: 75px;
     border-radius: 100px;
-    background-size: 100px;
+    background-size: 170px;
     background-position: center;
     background-repeat: no-repeat;
     transition: background-image 0.5s;
@@ -41,7 +41,33 @@ body {
 
 #replay {
     background-image: url('/utiles/bouton_Restart.png');
+    position: relative;
+    right: 150px;
+    bottom: 141px;
 }
 #maison {
     background-image: url('/utiles/bouton_home.png');
+    position: relative;
+    left: 150px;
+    top: 10px;
+}
+.block {
+    padding: 20px;
+    background-image: url('/utiles/Home.png');
+    background-size: auto;
+    background-position: center;
+    background-repeat: no-repeat;
+    border-color: antiquewhite;
+    height: 300px;
+    width: 600px;
+    text-align: center;
+    border-width: 10px;
+    border-style: ridge;
+
+}
+.pendu-image {
+    float: right;
+}
+.container {
+    text-align: center;
 }
