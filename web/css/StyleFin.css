@@ -7,7 +7,7 @@
 }
 
 body {
-    font-family: Arial, sans-serif;
+    font-family: cursive;
     background-color: #f3f4f6; 
     color: #333;
     display: flex;
@@ -63,11 +63,16 @@ body {
     text-align: center;
     border-width: 10px;
     border-style: ridge;
+    bottom: 300px;
+    position: relative;
 
 }
-.pendu-image {
-    float: right;
-}
+.pendu {
+    position: relative;
+    right: 600px;
+    top: 150px;
+  }
+
 .container {
     text-align: center;
 }
