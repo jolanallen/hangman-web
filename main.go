@@ -2,17 +2,16 @@ package main
 
 import (
 	"fmt"
-	hangman "hangmanweb/back/hangman-classique/GAME"
 	"hangmanweb/back/serveur"
 	"net/http"
 )
-var hc = &hangman.HANGMAN{}
-var web *hangmanweb.HANGMANWEB
+
+var web = &hangmanweb.HANGMANWEB{}
+//var web *hangmanweb.HANGMANWEB
 
 
 func main() {
 	web.WebInit()
-	
 	fmt.Println("Serveur démarré sur http://localhost:3030")
 	css := http.FileServer(http.Dir("./web/css"))
 	http.Handle("/css/", http.StripPrefix("/css/", css))
@@ -28,7 +27,7 @@ func main() {
 	http.HandleFunc("/hangman", web.Play)
 	http.HandleFunc("/Win", web.Win)
 	http.HandleFunc("/Loose", web.Loose)
-	http.HandleFunc("/test", web.Testletter)
+	
 	
 	
 	// Démarrage du serveur sur le port 3030
