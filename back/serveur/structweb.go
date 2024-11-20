@@ -23,5 +23,6 @@ type HANGMANWEB struct {
 	TmplNb        int
 	TmplList      []string
 	Lettre      string
+	Level        string
 
 }

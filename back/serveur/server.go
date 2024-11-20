@@ -3,12 +3,36 @@ package hangmanweb
 import (
 	"html/template"
 	"net/http"
+	"fmt"
 )
 
 
 
+var Data = Donnees{}
 
+func (h *HANGMANWEB)WebInit() {
+	hc.Intiwordlist()
+	hc.RandomWord()
+	h.StringTabConv()
+	
+	fmt.Println(hc.Mot)
+	fmt.Println(hc.Erreur)
+	fmt.Println(Data.Usedletter)
+	
+	Data.Mot = hc.Mot
+	Data.Essai = hc.Erreur
+	Data.Usedletter = ""
 
+	h.TemplateLoose ="./web/templates/Loose.html"
+	h.TemplateHome = "./web/templates/Home.html"
+	h.TemplatePlay = "./web/templates/Play.html"
+	h.TemplateWin = "./web/templates/Win.html"
+
+	h.TmplList = []string{h.TemplateHome, h.TemplatePlay, h.TemplateWin, h.TemplateLoose}
+	
+	
+	
+}
 
 
 
@@ -36,8 +60,10 @@ func (h *HANGMANWEB) Loose(w http.ResponseWriter, r *http.Request) {
 func(h *HANGMANWEB) RequestAndTemplate(w http.ResponseWriter, r *http.Request, TmplNb int)  {
 	r.ParseForm()
 	tmpl := template.Must(template.ParseFiles(h.TmplList[TmplNb]))
-	r.Form.Get("lettre")
-	r.Form.Get("level")
-	tmpl.Execute(w, Data)
+	lettre := r.Form.Get("lettre")
+	level := r.Form.Get("level")
+	h.Lettre = lettre
+	h.Level = level
+	
 	
 }
