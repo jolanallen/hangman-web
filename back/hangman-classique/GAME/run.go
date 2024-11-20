@@ -1,85 +1,34 @@
 package hangman
 
 import (
-    "bufio"
-    "fmt"
-    "os"
-    "strings"
-    "unicode"
+    
+
+    
 )
-
-
-// normalize convertit une chaîne en enlevant les accents et en la mettant en minuscules
-func normalize(s string) string {
-    t := ""
-    for _, c := range s {
-        switch c {
-        case 'à', 'â', 'ä':
-            t += "a"
-        case 'é', 'è', 'ê', 'ë':
-            t += "e"
-        case 'î', 'ï':
-            t += "i"
-        case 'ô', 'ö':
-            t += "o"
-        case 'ù', 'û', 'ü':
-            t += "u"
-        case 'ç':
-            t += "c"
-        default:
-            t += string(unicode.ToLower(c))
-        }
-    }
-    return t
-}
+ 
 
 func (hangman *HANGMAN) Run() {
     hangman.wordIsGood = false
     for hangman.IsRunning {
         hangman.Hangman()
-        hangman.readletter()
         hangman.testword()
+        
     }
 }
 
-func (hangman *HANGMAN) readletter() {
-    fmt.Println(hangman.MotIconnu)
-    var Reader = bufio.NewReader(os.Stdin)
-    String, _ := Reader.ReadString('\n')
-    String = strings.TrimSpace(String)
-    String = normalize(String) // Normalise l'entrée utilisateur (enlève les accents)
 
-    if String >= "a" && String <= "z" {
-        if len(String) > 1 {
-            if String == normalize(strings.Join(hangman.MotAdeviner, "")) { // Compare avec le mot normalisé
-               // hangman.win()
-            } else {
-                hangman.Erreur += 2
-            }
-        } else if len(String) == 1 {
-            hangman.lettre = String
-            hangman.UsedLetter = append(hangman.UsedLetter, hangman.lettre)
-            hangman.testLetter()
-        }
-    } else {
-        fmt.Println("lettre incorrecte !!")
-    }
-}
 
-func (hangman *HANGMAN) testLetter() {
+func (hangman *HANGMAN) TestLetter(lettre string) {
     hangman.lettreIsGood = false
-    normalizedMotAdeviner := normalize(strings.Join(hangman.MotAdeviner, ""))
-    for l := range normalizedMotAdeviner {
-        if hangman.lettre == string(normalizedMotAdeviner[l]) {
+    
+    for l := range hangman.MotAdeviner {
+        if lettre == string(hangman.MotAdeviner[l]) {
             hangman.lettreIsGood = true
             hangman.MotIconnu[l] = hangman.MotAdeviner[l] // Utilise la lettre originale pour l'affichage
         }
     }
     if !hangman.lettreIsGood {
         hangman.Erreur++
-    }
-    if hangman.Erreur >= 9 {
-        //hangman.gameOver()
     }
 }
 

@@ -17,6 +17,7 @@ type HANGMAN struct {          // vatiable utiliser dans la structure du jeu
 	Erreur       int
 	lettreIsGood bool
 	//wordFile     string
+	WordListPath   string
 	lettre       string
 	UsedLetter   []string
 	//medium       bool

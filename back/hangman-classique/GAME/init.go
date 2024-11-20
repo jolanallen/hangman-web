@@ -57,21 +57,8 @@ import (
 // 	fmt.Println("---------------------------------------------------------------------------------------------------------------------------------------------")
 // }
 
-func (hangman *HANGMAN) Intiwordlist() {
-	// if hangman.medium {
-	// 	hangman.wordFile = "utile/wordlist/words2.txt"  /// Utilise une liste de mots intermédiaires pour le mode médium.
-	// 	fmt.Println("mode de jeu : intermédiaire")
-	// } else if hangman.hard {
-	// 	hangman.wordFile = "utile/wordlist/words3.txt"  /// Utilise une liste de mots difficiles pour le mode hard.
-	// 	fmt.Println("mode de jeu : hard")
-	// } else {
-	// 	hangman.wordFile = "utile/wordlist/words.txt"   /// Utilise la liste de mots par défaut (facile).
-	// 	fmt.Println("mode de jeu : soft (défaut)")
-	// 	fmt.Println("tapez -medium pour un mode de jeu intermédiaire")
-	// 	fmt.Println("tapez -hard pour un mode de jeu difficile")
-	// }
-	
-	wordFile, err := os.Open("back/hangman-classique/utile/wordlist/words.txt")  /// Ouvre le fichier de la liste de mots.
+func (hangman *HANGMAN) Intiwordlist(WordListPath string) {
+	wordFile, err := os.Open(WordListPath)  /// Ouvre le fichier de la liste de mots.
 	if err != nil {
 		fmt.Println("Erreur ouverture fichier:", err)  /// Affiche une erreur si le fichier ne peut être ouvert.
 		defer wordFile.Close()
