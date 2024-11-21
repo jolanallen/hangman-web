@@ -12,30 +12,25 @@ import (
 
 func (h *HANGMANWEB) WebInit() {
 	h.Intiwordlist()
+	h.RandomWord()
 	
 	
 	h.Erreur = 0
-	h.Mot = ""
-	h.MotEasy = ""
-	h.MotMedium = ""
-	h.MotHard = ""
-	h.MotIconnu = []string{}
 	h.IsRunning = true
 	h.YouWin = false
 	h.YouLoose =false
 
 	
 	h.TemplateList =[]string{"./web/templates/Home.html", "./web/templates/Play.html", "./web/templates/Win.html", "./web/templates/Loose.html"}
-	h.LevelPath = []string{"../wordlist/word.txt", "../wordlist/word2.txt", "../wordlist/word3.txt"}
-	
-	
-	
 	
 }
 func (h *HANGMANWEB) Intiwordlist() {
-	wordFileEasy, err1 := os.Open(h.LevelPath[0])                   //ouverture des differents fichier texte qui contienent les liste de mots des differents niveau
-	wordFileMedium, err2 := os.Open(h.LevelPath[1])  
-	wordFileHard, err3 := os.Open(h.LevelPath[2])  
+
+	wordFileEasy, err1 := os.Open("back/wordlist/words.txt")               //ouverture des differents fichier texte qui contienent les liste de mots des differents niveau
+
+	wordFileMedium, err2 := os.Open("back/wordlist/words2.txt")  
+	
+	wordFileHard, err3 := os.Open("back/wordlist/words3.txt")  
 
 	if err1 != nil || err2 != nil || err3 != nil {                   // si erreur ouverture d'un des fichier alors on les ferme tous et on 
 		fmt.Println("Erreur ouverture fichier:", err1, err2, err3)
@@ -70,13 +65,8 @@ func (h *HANGMANWEB) Intiwordlist() {
 }
 
 
-
-  
-		
-
-
-func (h *HANGMANWEB) RandomWord() {
-	rand.Seed(time.Now().UnixMilli())  
+func (h *HANGMANWEB) RandomWord() {            // fonction qui génére un 3 nombres aléatoires qui permettront 
+	rand.Seed(time.Now().UnixMilli())  //de prendre un mot aléatoire dans chaque liste de mot de
 	
 	rdmEasy := rand.Intn(len(h.WordlsitEasy))
 	h.MotEasy = h.WordlsitEasy[rdmEasy]
@@ -86,6 +76,7 @@ func (h *HANGMANWEB) RandomWord() {
 
 	rdmHard := rand.Intn(len(h.wordlistHard))
 	h.MotHard = h.wordlistHard[rdmHard]	
-	fmt.Println(h.MotEasy, h.MotMedium, h.MotHard)
-                           
+	fmt.Println("Mot Aléatoire Easy :",h.MotEasy)
+    fmt.Println("Mot Aléatoire medium :", h.MotMedium)    
+	fmt.Println("Mot Aléatoire Hard :", h.MotHard)                  
 }

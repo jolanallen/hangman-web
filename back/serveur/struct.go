@@ -14,11 +14,6 @@ type HANGMANWEB struct {
 	//variable contenant les chemins d'accés au tamplates
 	TemplateList       []string
 
-	//variable chemin accés des wordlist
-	LevelEasyPath      string
-	LevelMediumPath    string
-	LevelHardPath      string
-	LevelPath          []string
 	//variables pour les list de mot easy, medium et hard 
 	WordlsitEasy       []string // liste de mot easy
 	WordlistMedium     []string  // liste de mot medium
