@@ -12,22 +12,17 @@ type Donnees struct {   // structure contenant les donnée a afficher dans les t
 
 type HANGMANWEB struct {
 	//variable contenant les chemins d'accés au tamplates
-	TemplateHome       string
-	TemplatePlay       string
-	TemplateWin        string 
-	TemplateLoose      string
 	TemplateList       []string
 
 	//variable chemin accés des wordlist
 	LevelEasyPath      string
 	LevelMediumPath    string
 	LevelHardPath      string
-
+	LevelPath          []string
 	//variables pour les list de mot easy, medium et hard 
 	WordlsitEasy       []string // liste de mot easy
 	WordlistMedium     []string  // liste de mot medium
 	wordlistHard       []string  // liste de mot hard
-	randomNb           int    // nombre aléatoire pour le choix du mot dans les 
 
 	// mot a deviner pour chaque niveau type string
 	MotEasy            string
@@ -49,7 +44,6 @@ type HANGMANWEB struct {
 	Level              string
 	Erreur             int
 	Usedletter         string
-	MotInconito        string
 
 
 

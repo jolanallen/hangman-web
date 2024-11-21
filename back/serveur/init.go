@@ -12,8 +12,6 @@ import (
 
 func (h *HANGMANWEB) WebInit() {
 	h.Intiwordlist()
-
-	h.RandomWord()
 	
 	
 	h.Erreur = 0
@@ -22,26 +20,22 @@ func (h *HANGMANWEB) WebInit() {
 	h.MotMedium = ""
 	h.MotHard = ""
 	h.MotIconnu = []string{}
+	h.IsRunning = true
+	h.YouWin = false
+	h.YouLoose =false
 
 	
-
-	h.TemplateLoose = "./web/templates/Loose.html"
-	h.TemplateHome = "./web/templates/Home.html"
-	h.TemplatePlay = "./web/templates/Play.html"
-	h.TemplateWin = "./web/templates/Win.html"
+	h.TemplateList =[]string{"./web/templates/Home.html", "./web/templates/Play.html", "./web/templates/Win.html", "./web/templates/Loose.html"}
+	h.LevelPath = []string{"../wordlist/word.txt", "../wordlist/word2.txt", "../wordlist/word3.txt"}
 	
-	h.LevelEasyPath = "/wordlist/word.txt"
-	h.LevelMediumPath = "/wordlist/word2.txt"
-	h.LevelHardPath = "/wordlist/word3.txt"
+	
 	
 	
 }
-
-
 func (h *HANGMANWEB) Intiwordlist() {
-	wordFileEasy, err1 := os.Open(h.LevelEasyPath)                   //ouverture des differents fichier texte qui contienent les liste de mots des differents niveau
-	wordFileMedium, err2 := os.Open(h.LevelMediumPath)  
-	wordFileHard, err3 := os.Open(h.LevelHardPath)  
+	wordFileEasy, err1 := os.Open(h.LevelPath[0])                   //ouverture des differents fichier texte qui contienent les liste de mots des differents niveau
+	wordFileMedium, err2 := os.Open(h.LevelPath[1])  
+	wordFileHard, err3 := os.Open(h.LevelPath[2])  
 
 	if err1 != nil || err2 != nil || err3 != nil {                   // si erreur ouverture d'un des fichier alors on les ferme tous et on 
 		fmt.Println("Erreur ouverture fichier:", err1, err2, err3)
@@ -74,6 +68,10 @@ func (h *HANGMANWEB) Intiwordlist() {
 	}
 
 }
+
+
+
+  
 		
 
 
@@ -81,12 +79,13 @@ func (h *HANGMANWEB) RandomWord() {
 	rand.Seed(time.Now().UnixMilli())  
 	
 	rdmEasy := rand.Intn(len(h.WordlsitEasy))
-	rdmMedium := rand.Intn(len(h.WordlistMedium))
-	rdmHard := rand.Intn(len(h.wordlistHard))
-
 	h.MotEasy = h.WordlsitEasy[rdmEasy]
+
+	rdmMedium := rand.Intn(len(h.WordlistMedium))
 	h.MotMedium = h.WordlistMedium[rdmMedium]
+
+	rdmHard := rand.Intn(len(h.wordlistHard))
 	h.MotHard = h.wordlistHard[rdmHard]	
-              
+	fmt.Println(h.MotEasy, h.MotMedium, h.MotHard)
                            
 }

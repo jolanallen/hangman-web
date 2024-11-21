@@ -9,7 +9,7 @@ import (
 func (h *HANGMANWEB) Run() {
 	h.WebInit()
 	for h.IsRunning {
-        
+        h.YouWin = true
     }
 }
 
