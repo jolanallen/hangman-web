@@ -1,9 +1,6 @@
 package hangmanweb
 
-import (
-	
-	
-)
+import "fmt"
 
 
 func (h *HANGMANWEB) Run() {
@@ -15,7 +12,12 @@ func (h *HANGMANWEB) Run() {
 
 
 
-
+func (h *HANGMANWEB) InitMotInconnu(Mot string) {
+	for _, char := range h.Mot {
+        h.MotIconnu = append(h.MotIconnu, string(char))
+    }
+    fmt.Println(h.MotIconnu)
+}
 
 
 

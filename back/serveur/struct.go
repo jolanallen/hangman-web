@@ -10,9 +10,13 @@ type Donnees struct {   // structure contenant les donnée a afficher dans les t
 	
 }
 
+
 type HANGMANWEB struct {
 	//variable contenant les chemins d'accés au tamplates
-	TemplateList       []string
+	TemplateHome         string
+	TemplatePlay         string
+	TemplateWin          string
+	TemplateLoose        string
 
 	//variables pour les list de mot easy, medium et hard 
 	WordlsitEasy       []string // liste de mot easy
@@ -33,10 +37,12 @@ type HANGMANWEB struct {
 	IsRunning          bool
 	YouWin             bool
 	YouLoose           bool
+	LettreIsUsed       bool
 
 	// variable des requêtes lettre entrée et  niveau choisis et used letter
 	Lettre             string
 	Level              string
+	Commande           string
 	Erreur             int
 	Usedletter         string
 

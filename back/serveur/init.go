@@ -13,17 +13,22 @@ import (
 func (h *HANGMANWEB) WebInit() {
 	h.Intiwordlist()
 	h.RandomWord()
-	
-	
+
 	h.Erreur = 0
 	h.IsRunning = true
 	h.YouWin = false
 	h.YouLoose =false
+	h.TemplateHome = "./web/templates/Home.html"
+	h.TemplatePlay = "./web/templates/Play.html"
+	h.TemplateWin = "./web/templates/Win.html"
+	h.TemplateLoose = "./web/templates/Loose.html"
+
 
 	
-	h.TemplateList =[]string{"./web/templates/Home.html", "./web/templates/Play.html", "./web/templates/Win.html", "./web/templates/Loose.html"}
-	
 }
+
+
+
 func (h *HANGMANWEB) Intiwordlist() {
 
 	wordFileEasy, err1 := os.Open("back/wordlist/words.txt")               //ouverture des differents fichier texte qui contienent les liste de mots des differents niveau
@@ -78,5 +83,10 @@ func (h *HANGMANWEB) RandomWord() {            // fonction qui génére un 3 nom
 	h.MotHard = h.wordlistHard[rdmHard]	
 	fmt.Println("Mot Aléatoire Easy :",h.MotEasy)
     fmt.Println("Mot Aléatoire medium :", h.MotMedium)    
-	fmt.Println("Mot Aléatoire Hard :", h.MotHard)                  
+	fmt.Println("Mot Aléatoire Hard :", h.MotHard)  
+	
 }
+
+
+
+
