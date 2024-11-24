@@ -4,7 +4,6 @@ import (
 	"html/template"
 	"net/http"
 	"strings"
-	
 )
 
 
@@ -45,28 +44,40 @@ func(h *HANGMANWEB) Request(w http.ResponseWriter, r *http.Request, html string)
 	lettre := r.Form.Get("lettre")
 	h.Lettre = lettre
 
-	if lettre <= "z" && lettre >= "a" {
-		if strings.Contains(h.Usedletter, lettre) == false {
-			h.Usedletter += lettre
-		}
-
-		
+	if boutonMenu == "restart" {
+		niveau = h.LevelActual
+		h.WebInit()
 		
 	}
-
+		
 	if niveau == "easy" {
-		h.Mot = h.MotEasy
-		h.Level = "easy"
-		h.InitMotInconnu(h.Mot)
+		h.Mot = h.MotEasy		
+		h.InitMotaDeviner(h.Mot)       //fonction qui mettra chaque charactére du mot dans un tableau qui sera utiliser pour la comparaisont
+		h.LevelActual = "easy"
+
 	} else if niveau == "medium" {
 		h.Mot = h.MotMedium
-		h.Level = "medium"
-		h.InitMotInconnu(h.Mot)
+		h.InitMotaDeviner(h.Mot)         //fonction qui mettra chaque charactére du mot dans un tableau qui sera utiliser pour la comparaisont
+		h.LevelActual = "medium"
+
 	} else if niveau == "hard" {
 		h.Mot = h.MotHard
-		h.Level = "hard"
-		h.InitMotInconnu(h.Mot)
+		h.InitMotaDeviner(h.Mot)         //fonction qui mettra chaque charactére du mot dans un tableau qui sera utiliser pour la comparaisont
+		h.LevelActual = "hard"
 	}
+
+	if !(strings.Contains(h.Usedletter, lettre)) {  // vérifie si la lettre a déja été utiliser 
+		h.Usedletter += lettre                             // si c'est pas le cas elle ajoute la lettre au letre utilisé 
+		if strings.Contains(h.Mot,  lettre) {
+			h.TestLetter(lettre)
+		
+		} else if h.Erreur <= 9 {
+			h.Erreur += 1
+		} else {
+			http.Redirect(w, r, "/Loose", http.StatusSeeOther)
+		}
+	}
+
 
 
 	
@@ -75,14 +86,12 @@ func(h *HANGMANWEB) Request(w http.ResponseWriter, r *http.Request, html string)
 		Essai: h.Erreur,
 		Usedletter: h.Usedletter,
 		MotInconnu: strings.Join(h.MotIconnu, " "),
-		Level: h.Level,
 	}
 	
 	
 	tmpl.Execute(w, Data)
 	
 
-	
 }
 
 

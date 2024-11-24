@@ -14,10 +14,16 @@ func (h *HANGMANWEB) WebInit() {
 	h.Intiwordlist()
 	h.RandomWord()
 
+	h.Usedletter =""
 	h.Erreur = 0
-	h.IsRunning = true
+	h.MotAdeviner = []string{""}
+	
+
+	// h.IsRunning = true
 	h.YouWin = false
-	h.YouLoose =false
+	h.YouLoose = false
+
+
 	h.TemplateHome = "./web/templates/Home.html"
 	h.TemplatePlay = "./web/templates/Play.html"
 	h.TemplateWin = "./web/templates/Win.html"

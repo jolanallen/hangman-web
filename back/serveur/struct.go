@@ -37,27 +37,20 @@ type HANGMANWEB struct {
 	IsRunning          bool
 	YouWin             bool
 	YouLoose           bool
-	LettreIsUsed       bool
+	LevelEasy          bool
+	LevelMedium        bool
+	LevelHard          bool
+	
 
 	// variable des requêtes lettre entrée et  niveau choisis et used letter
 	Lettre             string
+	LevelActual        string
 	Level              string
 	Commande           string
 	Erreur             int
 	Usedletter         string
 
 
-
-
-
-	wordIsGood         bool
-	
-	
-	
-	
-	lettreIsGood bool
-
-	
 
 
 }

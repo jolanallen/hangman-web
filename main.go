@@ -11,14 +11,15 @@ var web = &hangmanweb.HANGMANWEB{}
 
 
 func main() {
-	web.WebInit()
+	web.Run()
 	fmt.Println("Serveur démarré sur http://localhost:3030")
+
 	css := http.FileServer(http.Dir("./web/css"))
 	http.Handle("/css/", http.StripPrefix("/css/", css))
+
 	photo := http.FileServer(http.Dir("./web/utiles"))
 	http.Handle("/utiles/", http.StripPrefix("/utiles/", photo))
-	js := http.FileServer(http.Dir("./web/js"))
-	http.Handle("/js/", http.StripPrefix("/js/", js))
+
 	wordlist := http.FileServer(http.Dir("./back/wordlist"))
 	http.Handle("/wordlist/", http.StripPrefix("/wordlist", wordlist))
 	
@@ -38,7 +39,7 @@ func main() {
 		fmt.Println("Erreur lors du démarrage du serveur :", err)
 	}
 	
-
+	
 
 }
 

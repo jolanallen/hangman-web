@@ -5,35 +5,29 @@ import "fmt"
 
 func (h *HANGMANWEB) Run() {
 	h.WebInit()
-	for h.IsRunning {
-        
-    }
+	
 }
 
 
 
-func (h *HANGMANWEB) InitMotInconnu(Mot string) {
+func (h *HANGMANWEB) InitMotaDeviner(Mot string) {
 	for _, char := range h.Mot {
-        h.MotIconnu = append(h.MotIconnu, string(char))
+        h.MotAdeviner = append(h.MotAdeviner, string(char))
     }
-    fmt.Println(h.MotIconnu)
-}
+    fmt.Println(h.MotAdeviner)
+    // for i := 0; i <= len(h.MotAdeviner); i++ {
+    //     h.MotIconnu[i] = h.MotAdeviner[i]
+        
+    // }
+    // fmt.Println(h.MotIconnu) 
+}   
 
 
 
 
 func (h *HANGMANWEB) TestLetter(lettre string) {
-    h.lettreIsGood = false
-    
-    for l := range h.MotAdeviner {
-        if lettre == string(h.MotAdeviner[l]) {
-            h.lettreIsGood = true
-            h.MotIconnu[l] = h.MotAdeviner[l] // Utilise la lettre originale pour l'affichage
-        }
-    }
-    if !h.lettreIsGood {
-        h.Erreur++
-    }
+
+
 }
 
 
