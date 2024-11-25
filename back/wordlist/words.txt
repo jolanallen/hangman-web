@@ -132,13 +132,10 @@ livre
 classeur
 boite
 lampe
-garde-robe
 chambre
 salon
 bureau
 garage
-grenier
-sous-sol
 banquette
 buffet
 serrure

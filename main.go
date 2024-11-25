@@ -11,7 +11,7 @@ var web = &hangmanweb.HANGMANWEB{}
 
 
 func main() {
-	web.Run()
+	web.WebInit()
 	fmt.Println("Serveur démarré sur http://localhost:3030")
 
 	css := http.FileServer(http.Dir("./web/css"))

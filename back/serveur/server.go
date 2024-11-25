@@ -44,25 +44,28 @@ func(h *HANGMANWEB) Request(w http.ResponseWriter, r *http.Request, html string)
 	lettre := r.Form.Get("lettre")
 	h.Lettre = lettre
 
+
 	if boutonMenu == "restart" {
 		niveau = h.LevelActual
 		h.WebInit()
 		
+	} else if boutonMenu == "home" {
+		h.WebInit()
 	}
 		
 	if niveau == "easy" {
 		h.Mot = h.MotEasy		
-		h.InitMotaDeviner(h.Mot)       //fonction qui mettra chaque charactére du mot dans un tableau qui sera utiliser pour la comparaisont
+		h.InitMotADeviner(h.Mot)       //fonction qui mettra chaque charactére du mot dans un tableau qui sera utiliser pour la comparaisont
 		h.LevelActual = "easy"
 
 	} else if niveau == "medium" {
 		h.Mot = h.MotMedium
-		h.InitMotaDeviner(h.Mot)         //fonction qui mettra chaque charactére du mot dans un tableau qui sera utiliser pour la comparaisont
+		h.InitMotADeviner(h.Mot)         //fonction qui mettra chaque charactére du mot dans un tableau qui sera utiliser pour la comparaisont
 		h.LevelActual = "medium"
 
 	} else if niveau == "hard" {
 		h.Mot = h.MotHard
-		h.InitMotaDeviner(h.Mot)         //fonction qui mettra chaque charactére du mot dans un tableau qui sera utiliser pour la comparaisont
+		h.InitMotADeviner(h.Mot)         //fonction qui mettra chaque charactére du mot dans un tableau qui sera utiliser pour la comparaisont
 		h.LevelActual = "hard"
 	}
 
@@ -70,6 +73,7 @@ func(h *HANGMANWEB) Request(w http.ResponseWriter, r *http.Request, html string)
 		h.Usedletter += lettre                             // si c'est pas le cas elle ajoute la lettre au letre utilisé 
 		if strings.Contains(h.Mot,  lettre) {
 			h.TestLetter(lettre)
+			h.TestWord(w, r)
 		
 		} else if h.Erreur <= 9 {
 			h.Erreur += 1
@@ -79,20 +83,12 @@ func(h *HANGMANWEB) Request(w http.ResponseWriter, r *http.Request, html string)
 		}
 		
 	}
-
-	// for i := 0; i <= len(h.MotAdeviner); i++ {
-	// 	if h.MotAdeviner[i] == h.MotIconnu[i] {
-	// 		http.Redirect(w, r, "/Win", http.StatusSeeOther)
-	// 	}
-	// }
-
-	
 	
 	Data := Donnees{
 		Mot: h.Mot, 
 		Essai: h.Erreur,
 		Usedletter: h.Usedletter,
-		MotInconnu: strings.Join(h.MotIconnu, ""),
+		MotInconnu: strings.Join(h.MotIconnu, " "),
 	}
 	
 	

@@ -3,31 +3,30 @@ package hangmanweb
 import (
 	"fmt"
 	"math/rand"
-	"time"
+	"net/http"
+	"strings"
+	
 )
 
 
-func (h *HANGMANWEB) Run() {
-	h.WebInit()
-	
-}
 
 
 
-func (h *HANGMANWEB) InitMotaDeviner(Mot string) {
+
+func (h *HANGMANWEB) InitMotADeviner(Mot string) {
 	for _, char := range h.Mot {
-        h.MotAdeviner = append(h.MotAdeviner, string(char))
-    }
-    fmt.Println(h.MotAdeviner)
+    h.MotAdeviner = append(h.MotAdeviner, string(char))
+  }
+  fmt.Println(h.MotAdeviner)
     
    
-    for i :=  0; i < len(h.Mot); i++ {
+  for i :=  0; i < len(h.Mot); i++ {
 		h.MotIconnu = append(h.MotIconnu, "_")  
 	}
-    rand.Seed(time.Now().UnixMilli()) 
-	rdmNB:= rand.Intn(len(h.MotAdeviner))                  
+  
+	rdmNB := rand.Intn(len(h.Mot))                 
 	h.MotIconnu[rdmNB] = h.MotAdeviner[rdmNB]
-    fmt.Println(h.MotIconnu)
+  fmt.Println(h.MotIconnu)
 }   
 
 
@@ -40,6 +39,15 @@ func (h *HANGMANWEB) TestLetter(lettre string) {
         fmt.Println(h.MotIconnu)
     }
   }
+  
+}
+func (h *HANGMANWEB) TestWord(w http.ResponseWriter, r *http.Request) {
+  TestMot := strings.Join(h.MotIconnu, "")
+  if !(strings.Contains(TestMot, "_")) {
+    if TestMot == h.Mot {
+      http.Redirect(w, r, "/Win", http.StatusSeeOther)
+    }
+  } 
 }
 
 
