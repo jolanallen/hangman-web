@@ -17,7 +17,7 @@ func (h *HANGMANWEB) WebInit() {
 	h.Usedletter =""
 	h.Erreur = 0
 	h.MotAdeviner = []string{""}
-	
+	h.MotIconnu = []string{""}
 
 	// h.IsRunning = true
 	h.YouWin = false

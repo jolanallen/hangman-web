@@ -73,19 +73,26 @@ func(h *HANGMANWEB) Request(w http.ResponseWriter, r *http.Request, html string)
 		
 		} else if h.Erreur <= 9 {
 			h.Erreur += 1
-		} else {
+		
+		}  else {
 			http.Redirect(w, r, "/Loose", http.StatusSeeOther)
 		}
+		
 	}
 
+	// for i := 0; i <= len(h.MotAdeviner); i++ {
+	// 	if h.MotAdeviner[i] == h.MotIconnu[i] {
+	// 		http.Redirect(w, r, "/Win", http.StatusSeeOther)
+	// 	}
+	// }
 
-
+	
 	
 	Data := Donnees{
 		Mot: h.Mot, 
 		Essai: h.Erreur,
 		Usedletter: h.Usedletter,
-		MotInconnu: strings.Join(h.MotIconnu, " "),
+		MotInconnu: strings.Join(h.MotIconnu, ""),
 	}
 	
 	
