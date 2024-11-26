@@ -14,7 +14,6 @@ func (h *HANGMANWEB) InitMotADeviner(Mot string) {
 	for _, char := range h.Mot {
     h.MotAdeviner = append(h.MotAdeviner, string(char))
   }
-  fmt.Println(h.MotAdeviner)
     
   for i :=  0; i < len(h.Mot); i++ {
 		h.MotIconnu = append(h.MotIconnu, "_")  

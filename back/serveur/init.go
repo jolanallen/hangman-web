@@ -84,9 +84,6 @@ func (h *HANGMANWEB) RandomWord() {            // fonction qui génére un 3 nom
 
 	rdmHard := rand.Intn(len(h.wordlistHard))
 	h.MotHard = h.wordlistHard[rdmHard]	
-	fmt.Println("Mot Aléatoire Easy :",h.MotEasy)
-    fmt.Println("Mot Aléatoire medium :", h.MotMedium)    
-	fmt.Println("Mot Aléatoire Hard :", h.MotHard)  
 	
 }
 

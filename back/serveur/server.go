@@ -7,15 +7,6 @@ import (
 )
 
 
-
-
-
-
-
-
-
-
-
 func (h *HANGMANWEB) Home(w http.ResponseWriter, r *http.Request) {
 	h.Request(w, r, h.TemplateHome)
 	
@@ -85,7 +76,7 @@ func(h *HANGMANWEB) Request(w http.ResponseWriter, r *http.Request, html string)
 	}
 	
 	Data := Donnees{
-		Mot: h.Mot, 
+		Mot: h.Mot,
 		Essai: h.Erreur,
 		Usedletter: h.Usedletter,
 		MotInconnu: strings.Join(h.MotIconnu, " "),
