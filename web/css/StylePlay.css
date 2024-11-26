@@ -24,14 +24,6 @@ html {
 .info {
     background-color: grey;
 }
-.dev {
-    width: 353px;
-    position: relative;
-    background-color: #4CAF50;
-    z-index: 2;
-   
-   
-}
 
 .start-button {
     display: inline-block;
