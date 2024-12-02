@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html lang="fr">
 <head>
@@ -9,14 +8,22 @@
 </head>
 <body>
     <div class="container">
-        <header>
-            <h1>Loooooooose!!!!!!</h1>
-        </header>
-    
-
-        <section class="start">
-            <a href="/Home" class="start-button">recommencer le jeu</a>
-        </section>
+        <img src="/utiles/hangmanDead.png" class="pendu">
+        <div class="block">
+            <header class="container">
+                <h1>Oh Non vous avez perdu !!!</h1>
+                <h2 id="motadeviner">Le mot était : {{.Mot}}</h2>
+                <h2 id="essai">Nombre d'essais : {{.Essai}}</h2>
+            </header>
+            <div class="boutonDeMenu">
+                <form action="/Home" class="boutonDeMenu">
+                    <button class="bouton-menu" id="maison" type="submit" value="home" name="bouton-menu"></button>
+                </form>
+                <form action="/hangman" class="boutonDeMenu">
+                    <button class="bouton-menu" id="replay" type="submit" value="restart" name="bouton-menu" ></button>
+                </form>
+            </div>
+        </div>
     </div>
 </body>
 </html>

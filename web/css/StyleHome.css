@@ -1,17 +1,26 @@
+/* style.css */
+
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
 }
-
-body {
-    font-family: Arial, sans-serif;
-    background-color: #f3f4f6;
+h1 {
+    font-size: 40px;
+}
+h2 {
+    color: blue;
+    font-family: cursive;
+}
+html {
+    font-family: cursive;
+    background-color: #f3f4f6; 
     color: #333;
     display: flex;
     justify-content: center;
     align-items: center;
     height: 100vh;
+<<<<<<< HEAD
     background-image: url('/utiles/Home.png');
     background-size: cover;
     background-position: center;
@@ -38,4 +47,52 @@ h1 {
     height: auto;
     text-align: center;
     border: #333;
+=======
+    background-image: url('/utiles/Home.png'); 
+    background-size: cover; 
+    background-position: center; 
+    background-repeat: no-repeat; 
+}
+
+.bouton-level {
+    border-width: 0px;
+    background-color: transparent;
+    padding: 75px;
+    border-radius: 100px;
+    background-size: 140px;
+    background-position: center;
+    background-repeat: no-repeat;
+    transition: background-image 0.5s;
+    cursor: pointer;
+    z-index: 2;
+
+}
+.bouton-level:hover {
+    opacity: 0.5;
+}
+#easy {
+    background-image: url('/utiles/bouton_easy.png');
+
+}
+#medium {
+    background-image: url('/utiles/bouton_medium.png');
+}
+#hard {
+    background-image: url('/utiles/bouton_hard.png');
+}
+.block {
+    padding: 20px;
+    background-image: url('/utiles/Home.png');
+    background-size: auto;
+    background-position: center;
+    background-repeat: no-repeat;
+    border-color: antiquewhite;
+    height: 550px;
+    width: 600px;
+    text-align: center;
+    border-width: 10px;
+    border-style: ridge;
+   
+
+>>>>>>> 07fcb092bba938cfe14696b7a70cc7eb3f42faff
 }

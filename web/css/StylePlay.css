@@ -1,21 +1,28 @@
 * {
     margin: 0;
     padding: 0;
-    box-sizing: border-box;
+    font-family: cursive;
+    
 }
-
-body {
-    font-family: Arial, sans-serif;
-    background-color: #f3f4f6; 
-    color: #333;
-    display: flex;
-    justify-content: center;
-    align-items: center;
+.information {
+    background-color: black;
+    width: 353px;
+    text-align: center;
+}
+html {
     height: 100vh;
     background-image: url('/utiles/Background.png'); 
     background-size: cover; 
     background-position: center; 
-    background-repeat: no-repeat; 
+    position: fixed;
+}
+.Head {
+    background-color: rosybrown;
+    text-align: center;
+    width: 1850px;
+}
+.info {
+    background-color: grey;
 }
 
 .start-button {
@@ -28,7 +35,172 @@ body {
     border-radius: 5px;
     transition: background-color 0.3s ease;
 }
-h4 {
-    color:red;
+
+.boutonDeMenu {
+    position: relative;
+    width: 110px;
+    left: 1730px;
+    bottom: 100px;
+    z-index: 2;
+}
+.bouton-menu {
+    border-width: 0px;
+    background-color: transparent;
+    padding: 55px;
+    border-radius: 100px;
+    background-size: 100px;
+    background-position: center;
+    background-repeat: no-repeat;
+    transition: background-image 0.5s;
+    cursor: pointer;
+    z-index: 2;
 
 }
+.bouton-menu:hover {
+    opacity: 0.5;
+}
+#replay {
+    background-image: url('/utiles/bouton_Restart.png')
+}
+#maison {
+    background-image: url('/utiles/bouton_home.png');
+}
+.image-container {
+    text-align: center; 
+    position: relative;
+    bottom: 500px;
+    z-index: 1;
+}
+
+.pendu-image {
+    max-width: 100%; 
+    height: 505px; 
+    display: block; 
+    margin: 0 auto; 
+    padding: 75px;
+    z-index: 1;
+}
+
+.bouton {
+    border-width: 0px;
+    background-color: transparent;
+    padding: 65px;
+    border-radius: 100px;
+    background-size: 150px;
+    background-position: center;
+    background-repeat: no-repeat;
+    transition: background-image 0.5s;
+    cursor: pointer;
+}
+.bouton:hover {
+    opacity: 0.5;
+}
+.clavier {
+    position: relative;
+    bottom: 650px;
+    z-index: 2;
+}
+.clavier1 {
+    width: 1700px;
+    position: relative; 
+    left: 100px;
+    top:150px;
+    z-index: 2;
+ }
+ .clavier2 {
+    width: 1300px;
+    position: relative;
+    left: 300px;
+    top:150px;
+    z-index: 2;
+ }
+ .clavier3 {
+    width: 800px;
+    position: relative;
+    left: 570px;
+    top:150px;
+    z-index: 2;
+ }
+
+
+
+#A {
+    background-image: url('/utiles/A.png');
+}
+#B {
+    background-image: url('/utiles/B.png');
+}
+#C {
+    background-image: url('/utiles/C.png');
+}
+#D {
+    background-image: url('/utiles/D.png');
+}
+#E {
+    background-image: url('/utiles/E.png');
+}
+#F {
+    background-image: url('/utiles/F.png');
+}
+#G {
+    background-image: url('/utiles/G.png');
+}
+#H {
+    background-image: url('/utiles/H.png');
+}
+#I {
+    background-image: url('/utiles/I.png');
+}
+#J {
+    background-image: url('/utiles/J.png');
+}
+#K {
+    background-image: url('/utiles/K.png');
+}
+#L {
+    background-image: url('/utiles/L.png');
+}
+#M {
+    background-image: url('/utiles/M.png');
+}
+#N {
+    background-image: url('/utiles/N.png');
+}
+#O {
+    background-image: url('/utiles/O.png');
+}
+#P {
+    background-image: url('/utiles/P.png');
+}
+#Q {
+    background-image: url('/utiles/Q.png');
+}
+#R {
+    background-image: url('/utiles/R.png');
+}
+#S {
+    background-image: url('/utiles/S.png');
+}
+#T {
+    background-image: url('/utiles/T.png');
+}
+#U {
+    background-image: url('/utiles/U.png');
+}
+#V {
+    background-image: url('/utiles/V.png');
+}
+#W {
+    background-image: url('/utiles/W.png');
+}
+#X {
+    background-image: url('/utiles/X.png');
+}
+#Y {
+    background-image: url('/utiles/Y.png');
+}
+#Z {
+    background-image: url('/utiles/Z.png');
+}
+
+

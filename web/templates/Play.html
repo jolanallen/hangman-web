@@ -7,25 +7,66 @@
     <title>Jeu du Pendu - Accueil</title>
     <link rel="stylesheet" href="/css/StylePlay.css" type="text/css">
 </head>
-<body>
-    <div class="container">
-        <header>
+<body class="principal">
+    
+        <div class="Head">
             <h1>Bienvenue au Jeu du Pendu !</h1>
-            <h4>attemps : {{.Essai}} /9</h4>
-            <h3>mot a deviner : {{.Mot}}</h3>
-        </header>
-        
-        <section class="intro">
-            <p>Testez vos compétences en devinant les lettres et trouvez le mot caché avant que notre personnage ne soit pendu !</p>
-        </section>
-        <input type="image" id="lettre-button"  src="/utiles/A.png" />
-        
-
-        <section class="start">
-            <a href="Play" class="lettre button"></a>
-            <a href="/Win" class="start-button">WINNNNN</a>
-            <a href="/Loose" class="start-button">Loooooooose</a>
-        </section>
-    </div>
+            <h2>Ynov campus montpellier</h2>
+        </div>
+        <div class="information">
+            <section class="info">
+                <h4 id="essai">Erreures : {{.Essai}} /10</h4>
+                <h3 id="motadeviner">Mot a deviner: {{.MotInconnu}}</h3>
+                <h3 id="usedletter">Lettres déja utilisées :{{.Usedletter}}</h3>
+                <p>Testez vos compétences en devinant les lettres et trouvez le mot caché avant que notre personnage ne soit pendu !</p>
+            </section>
+        </div>
+        <form action="/Home" class="boutonDeMenu">
+            <div>
+                <button class="bouton-menu" id="maison" type="submit" value="home" name="bouton-menu"></button>
+            </div>
+        </form>
+        <form action="/hangman" class="boutonDeMenu">
+            <div>
+                <button class="bouton-menu" id="replay" type="submit" value="restart" name="bouton-menu" ></button>
+            </div>
+        </form>
+        <div class="image-container">
+            <img src="/utiles/etat{{.Essai}}.png" alt="État du pendu" class="pendu-image">
+        </div>
+        <form class="clavier" action="/hangman">
+            <div class="clavier1">
+                <button class="bouton" id="A" name="lettre" type="submit" value="a"></button>
+                <button class="bouton" id="B" name="lettre" type="submit" value="b"></button>
+                <button class="bouton" id="C" name="lettre" type="submit" value="c"></button>
+                <button class="bouton" id="D" name="lettre" type="submit" value="d"></button>
+                <button class="bouton" id="E" name="lettre" type="submit" value="e"></button>
+                <button class="bouton" id="F" name="lettre" type="submit" value="f"></button>
+                <button class="bouton" id="G" name="lettre" type="submit" value="g"></button>
+                <button class="bouton" id="H" name="lettre" type="submit" value="h"></button>
+                <button class="bouton" id="I" name="lettre" type="submit" value="i"></button>
+                <button class="bouton" id="J" name="lettre" type="submit" value="j"></button>
+                <button class="bouton" id="K" name="lettre" type="submit" value="k"></button>
+                <button class="bouton" id="L" name="lettre" type="submit" value="l"></button>
+            </div>
+            <div class="clavier2">
+                <button class="bouton" id="M" name="lettre" type="submit" value="m"></button>
+                <button class="bouton" id="N" name="lettre" type="submit" value="n"></button>
+                <button class="bouton" id="O" name="lettre" type="submit" value="o"></button>
+                <button class="bouton" id="P" name="lettre" type="submit" value="p"></button>
+                <button class="bouton" id="Q" name="lettre" type="submit" value="q"></button>
+                <button class="bouton" id="R" name="lettre" type="submit" value="r"></button>
+                <button class="bouton" id="S" name="lettre" type="submit" value="s"></button>
+                <button class="bouton" id="T" name="lettre" type="submit" value="t"></button>
+                <button class="bouton" id="U" name="lettre" type="submit" value="u"></button>
+            </div>
+            <div class="clavier3">
+                <button class="bouton" id="V" name="lettre" type="submit" value="v"></button>
+                <button class="bouton" id="W" name="lettre" type="submit" value="w"></button>
+                <button class="bouton" id="X" name="lettre" type="submit" value="x"></button>
+                <button class="bouton" id="Y" name="lettre" type="submit" value="y"></button>
+                <button class="bouton" id="Z" name="lettre" type="submit" value="z"></button>
+            </div>            
+        </form>
 </body>
 </html>
