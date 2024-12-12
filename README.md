@@ -52,15 +52,15 @@ http://localhost:3030
 
 ## Contribution
 Les contributions sont les bienvenues ! Pour contribuer :
-1. Forkez le projet
-2. Créez une nouvelle branche (`git checkout -b feature/amelioration`)
+1. Clonner le projet
+2. Créez une nouvelle branche (`git checkout -b contributeur`)
 3. Committez vos changements (`git commit -m 'Ajout de fonctionnalité'`)
-4. Pushez vers la branche (`git push origin feature/amelioration`)
+4. Pushez vers la branche (`git push origin contributeur`)
 5. Ouvrez une Pull Request
--
+
 
 ## Auteurs
-- Jolan allen, oscars gonsalez noa kéo
+- Jolan allen, oscars gonsalez, noa, kéo.
 
 
 
