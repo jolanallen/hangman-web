@@ -12,7 +12,6 @@ import (
 
 func (h *HANGMANWEB) WebInit() {
 	rand.Seed(time.Now().UnixNano())
-	h.Intiwordlist()
 	h.RandomWord()
 
 	h.Usedletter =""
@@ -77,13 +76,16 @@ func (h *HANGMANWEB) Intiwordlist() {
 
 func (h *HANGMANWEB) RandomWord() {            // fonction qui génére un 3 nombres aléatoires qui permettront 	
 	rdmEasy := rand.Intn(len(h.WordlsitEasy))
-	h.MotEasy = h.WordlsitEasy[rdmEasy]
+	h.MotEasy = h.WordlsitEasy[rdmEasy] 
+	fmt.Println("mot aléatoire easy crée")
 
 	rdmMedium := rand.Intn(len(h.WordlistMedium))
 	h.MotMedium = h.WordlistMedium[rdmMedium]
+	fmt.Println("mot aléatoire medium crée")
 
 	rdmHard := rand.Intn(len(h.wordlistHard))
 	h.MotHard = h.wordlistHard[rdmHard]	
+	fmt.Println("mot aléatoire hard crée")
 	
 }
 

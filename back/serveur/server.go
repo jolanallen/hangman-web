@@ -43,22 +43,44 @@ func(h *HANGMANWEB) Request(w http.ResponseWriter, r *http.Request, html string)
 	} else if boutonMenu == "home" {
 		h.WebInit()
 	}
-		
-	if niveau == "easy" {
+	
+
+
+	switch niveau {
+	case "easy" :
 		h.Mot = h.MotEasy		
 		h.InitMotADeviner(h.Mot)       //fonction qui mettra chaque charactére du mot dans un tableau qui sera utiliser pour la comparaisont
 		h.LevelActual = "easy"
 
-	} else if niveau == "medium" {
+	case "medium" :
 		h.Mot = h.MotMedium
 		h.InitMotADeviner(h.Mot)         //fonction qui mettra chaque charactére du mot dans un tableau qui sera utiliser pour la comparaisont
 		h.LevelActual = "medium"
 
-	} else if niveau == "hard" {
+	case "hard":
 		h.Mot = h.MotHard
 		h.InitMotADeviner(h.Mot)         //fonction qui mettra chaque charactére du mot dans un tableau qui sera utiliser pour la comparaisont
 		h.LevelActual = "hard"
 	}
+
+
+
+
+	// if niveau == "easy" {
+	// 	h.Mot = h.MotEasy		
+	// 	h.InitMotADeviner(h.Mot)       //fonction qui mettra chaque charactére du mot dans un tableau qui sera utiliser pour la comparaisont
+	// 	h.LevelActual = "easy"
+
+	// } else if niveau == "medium" {
+	// 	h.Mot = h.MotMedium
+	// 	h.InitMotADeviner(h.Mot)         //fonction qui mettra chaque charactére du mot dans un tableau qui sera utiliser pour la comparaisont
+	// 	h.LevelActual = "medium"
+
+	// } else if niveau == "hard" {
+	// 	h.Mot = h.MotHard
+	// 	h.InitMotADeviner(h.Mot)         //fonction qui mettra chaque charactére du mot dans un tableau qui sera utiliser pour la comparaisont
+	// 	h.LevelActual = "hard"
+	// }
 
 	if !(strings.Contains(h.Usedletter, lettre)) {  // vérifie si la lettre a déja été utiliser 
 		h.Usedletter += lettre                             // si c'est pas le cas elle ajoute la lettre au letre utilisé 
