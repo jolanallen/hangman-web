@@ -57,7 +57,5 @@ Les contributions sont les bienvenues ! Pour contribuer :
 5. Ouvrez une Pull Request
 
 ## Auteurs
-- Votre Nom (@votre-username)
+- Jolan allen, oscars gonsalez noa kéo
 
-## Licence
-Ce projet est sous licence MIT. Voir le fichier `LICENSE` pour plus de détails.
