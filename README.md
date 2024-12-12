@@ -60,7 +60,7 @@ Les contributions sont les bienvenues ! Pour contribuer :
 
 
 ## Auteurs
-- Jolan allen, oscars gonsalez, noa, kéo
+- Jolan allen, oscars gonsalez, noa, kéo.
 
 
 
