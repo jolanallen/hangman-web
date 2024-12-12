@@ -1,27 +1,26 @@
 # Hangman Web
 
+
 ## Description
-Hangman Web est une implémentation web du jeu classique du pendu, développée en Go (Golang) avec une interface web. Le jeu permet aux joueurs de deviner des mots lettre par lettre, avec un nombre limité de tentatives.
+Hangman Web reprends la logique de jeux de hangman-classic, il est développée en Go (Golang) avec une interface web crée a partir d'éléments graphique entiérement dessiné par l'équipe. Le jeu permet aux joueurs de deviner des mots lettre par lettre, avec un nombre limité de tentatives, les lettres utilisées sont affichées.
+Il y a 3 niveaux de dificultées disponnible dans le jeux "easy", "medium" et "hard".
+
 
 ## Technologies Utilisées
-- Backend : Go (Golang)
-- Frontend : HTML, CSS
-- Server : Go net/http package
+- Backend : Go (Golang). 
+- Frontend : HTML, CSS.
+- Krita : éléments graphique.
 
-## Prérequis
-Pour exécuter ce projet, vous devez avoir installé :
-- Go (version 1.16 ou supérieure)
-- Un navigateur web moderne
 
 ## Installation
 
 1. Clonez le repository :
 ```bash
-git clone https://github.com/votre-username/hangman-web.git
+git clone https://github.com/jolanallen/hangman-web.git
 cd hangman-web
 ```
 
-## Lancement du Projet
+## Lancement du Jeu
 
 1. Démarrez le serveur :
 ```bash
@@ -40,6 +39,9 @@ http://localhost:3030
 - Sélection aléatoire des mots
 - Compteur de tentatives restantes
 - Pages de victoire et de défaite personnalisées
+- Trois niveau de dificultés
+- Possibilité d'ajouter des mots personaliser dans les fichiers qui contiennent les liste de mots. 
+- possibilité de modifier les dessin des état du hangman pour crée un hangman avec des états personalisé
 
 
 ## Comment Jouer
@@ -55,7 +57,10 @@ Les contributions sont les bienvenues ! Pour contribuer :
 3. Committez vos changements (`git commit -m 'Ajout de fonctionnalité'`)
 4. Pushez vers la branche (`git push origin feature/amelioration`)
 5. Ouvrez une Pull Request
+-
 
 ## Auteurs
 - Jolan allen, oscars gonsalez noa kéo
+
+
 
