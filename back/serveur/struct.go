@@ -6,10 +6,7 @@ type Donnees struct {   // structure contenant les donnée a afficher dans les t
 	Mot        string   // mot a deviner DEBBUGAGE A SUPPRIMER 
 	MotInconnu string   // Mot inconnue donc afficher sous la forme "a _ _ a _ _ " qui correspond a la variable MotInconnu de type []string
 	Usedletter string   // lettre utiliser 
-	Level      string   // le niveau afficher sur la page play.html
-	
 }
-
 
 type HANGMANWEB struct {
 	//variable contenant les chemins d'accés au tamplates
@@ -33,20 +30,10 @@ type HANGMANWEB struct {
 	MotAdeviner        []string   // mot a deviener de type [c a n a r d]
 	MotIconnu          []string    // mot inconnu de type  [c a _ a _ d]
 
-	// variable d'état du jeu 
 	IsRunning          bool
-	YouWin             bool
-	YouLoose           bool
-	LevelEasy          bool
-	LevelMedium        bool
-	LevelHard          bool
 	
-
 	// variable des requêtes lettre entrée et  niveau choisis et used letter
-	Lettre             string
 	LevelActual        string
-	Level              string
-	Commande           string
 	Erreur             int
 	Usedletter         string
 

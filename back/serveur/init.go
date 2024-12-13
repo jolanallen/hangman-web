@@ -11,17 +11,14 @@ import (
 
 
 func (h *HANGMANWEB) WebInit() {
-	rand.Seed(time.Now().UnixNano())
+	rand.Seed(time.Now().UnixNano())  // Initialiser la graine aléatoire une seule fois
 	h.RandomWord()
 
 	h.Usedletter =""
 	h.Erreur = 0
 	h.MotAdeviner = []string{}
 	h.MotIconnu = []string{}
-
-	h.YouWin = false
-	h.YouLoose = false
-
+	h.IsRunning = true
 
 	h.TemplateHome = "./web/templates/Home.html"
 	h.TemplatePlay = "./web/templates/Play.html"
@@ -74,8 +71,8 @@ func (h *HANGMANWEB) Intiwordlist() {
 }
 
 
-func (h *HANGMANWEB) RandomWord() {            // fonction qui génére un 3 nombres aléatoires qui permettront 	
-	rdmEasy := rand.Intn(len(h.WordlsitEasy))
+func (h *HANGMANWEB) RandomWord() {            		// fonction qui génére un 3 nombres aléatoires qui permettront 	
+	rdmEasy := rand.Intn(len(h.WordlsitEasy))	// Générer un nombre aléatoire entre 0 et la longeur de worlist easy 
 	h.MotEasy = h.WordlsitEasy[rdmEasy] 
 	fmt.Println("mot aléatoire easy crée")
 

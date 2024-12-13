@@ -7,7 +7,7 @@ import (
 )
 
 
-func (h *HANGMANWEB) Home(w http.ResponseWriter, r *http.Request) {
+func (h *HANGMANWEB) Home(w http.ResponseWriter, r *http.Request) {   // fonction pour afficher les differents templates html
 	h.Request(w, r, h.TemplateHome)
 	
 }
@@ -28,84 +28,45 @@ func (h *HANGMANWEB) Loose(w http.ResponseWriter, r *http.Request) {
 func(h *HANGMANWEB) Request(w http.ResponseWriter, r *http.Request, html string)  {
 	r.ParseForm()
 	tmpl := template.Must(template.ParseFiles(html))
-	niveau := r.Form.Get("level")
-	h.Level = niveau
+	niveau := r.Form.Get("level")                                             // gestion des requêtes Get faite par le joueur 
 	boutonMenu := r.Form.Get("bouton-menu")
-	h.Commande = boutonMenu
 	lettre := r.Form.Get("lettre")
-	h.Lettre = lettre
-
 
 	if boutonMenu == "restart" {
-		niveau = h.LevelActual
+		niveau = h.LevelActual   // permet de garder en mémoire le niveau actuel cette variable n'est pas réintialiser dans la fonction h.webinit()
 		h.WebInit()
 		
 	} else if boutonMenu == "home" {
 		h.WebInit()
 	}
 	
-
-
 	switch niveau {
 	case "easy" :
 		h.Mot = h.MotEasy		
 		h.InitMotADeviner(h.Mot)       //fonction qui mettra chaque charactére du mot dans un tableau qui sera utiliser pour la comparaisont
 		h.LevelActual = "easy"
-
 	case "medium" :
 		h.Mot = h.MotMedium
 		h.InitMotADeviner(h.Mot)         //fonction qui mettra chaque charactére du mot dans un tableau qui sera utiliser pour la comparaisont
 		h.LevelActual = "medium"
-
 	case "hard":
 		h.Mot = h.MotHard
 		h.InitMotADeviner(h.Mot)         //fonction qui mettra chaque charactére du mot dans un tableau qui sera utiliser pour la comparaisont
 		h.LevelActual = "hard"
 	}
-
-
-
-
-	// if niveau == "easy" {
-	// 	h.Mot = h.MotEasy		
-	// 	h.InitMotADeviner(h.Mot)       //fonction qui mettra chaque charactére du mot dans un tableau qui sera utiliser pour la comparaisont
-	// 	h.LevelActual = "easy"
-
-	// } else if niveau == "medium" {
-	// 	h.Mot = h.MotMedium
-	// 	h.InitMotADeviner(h.Mot)         //fonction qui mettra chaque charactére du mot dans un tableau qui sera utiliser pour la comparaisont
-	// 	h.LevelActual = "medium"
-
-	// } else if niveau == "hard" {
-	// 	h.Mot = h.MotHard
-	// 	h.InitMotADeviner(h.Mot)         //fonction qui mettra chaque charactére du mot dans un tableau qui sera utiliser pour la comparaisont
-	// 	h.LevelActual = "hard"
-	// }
-
-	if !(strings.Contains(h.Usedletter, lettre)) {  // vérifie si la lettre a déja été utiliser 
-		h.Usedletter += lettre                             // si c'est pas le cas elle ajoute la lettre au letre utilisé 
-		if strings.Contains(h.Mot,  lettre) {
-			h.TestLetter(lettre)
-			h.TestWord(w, r)
-		
-		} else if h.Erreur <= 9 {
-			h.Erreur += 1
-		
-		}  else {
-			http.Redirect(w, r, "/Loose", http.StatusSeeOther)
-		}
-		
-	}
+		h.TestLetter(w, r, lettre)
+	
+	
 	
 	Data := Donnees{
 		Mot: h.Mot,
 		Essai: h.Erreur,
 		Usedletter: h.Usedletter,
-		MotInconnu: strings.Join(h.MotIconnu, " "),
+		MotInconnu: strings.Join(h.MotIconnu, " "),  // ligne un peu particuliere qui permet de convertir un tableau de string en string car html n'affiche pas les tableau 
 	}
 	
 	
-	tmpl.Execute(w, Data)
+	tmpl.Execute(w, Data)                        // eaffichage du templates avec les données actualiser dans la structure data
 	
 
 }
