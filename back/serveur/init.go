@@ -18,7 +18,6 @@ func (h *HANGMANWEB) WebInit() {
 	h.Erreur = 0
 	h.MotAdeviner = []string{}
 	h.MotIconnu = []string{}
-	h.IsRunning = true
 
 	h.TemplateHome = "./web/templates/Home.html"
 	h.TemplatePlay = "./web/templates/Play.html"
