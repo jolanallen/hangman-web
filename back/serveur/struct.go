@@ -30,7 +30,6 @@ type HANGMANWEB struct {
 	MotAdeviner        []string   // mot a deviener de type [c a n a r d]
 	MotIconnu          []string    // mot inconnu de type  [c a _ a _ d]
 
-	IsRunning          bool
 	
 	// variable des requêtes lettre entrée et  niveau choisis et used letter
 	LevelActual        string
