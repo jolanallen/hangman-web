@@ -30,7 +30,8 @@ func (h *HANGMANWEB) InitMotADeviner(Mot string) {
 func (h *HANGMANWEB) TestLetter(w http.ResponseWriter, r *http.Request, lettre string) {
 
   if !(strings.Contains(h.Usedletter, lettre)) {  // vérifie si la lettre a déja été utiliser 
-		h.Usedletter += lettre                             // si c'est pas le cas elle ajoute la lettre au letre utilisé 
+		h.Usedletter += lettre
+    h.Usedletter += " "                             // si c'est pas le cas elle ajoute la lettre au letre utilisé 
 		if strings.Contains(h.Mot,  lettre) {
       for i := 0; i < len(h.MotAdeviner); i++ {        // boucle qui vérifie si la lettre entrée par le joueur appartient au mot a devienr si oui il l'ajout au mot inconnu
         if h.MotAdeviner[i] == lettre {

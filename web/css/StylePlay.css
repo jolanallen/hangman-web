@@ -5,9 +5,7 @@
     
 }
 .information {
-    background-color: black;
     width: 353px;
-    text-align: center;
 }
 html {
     height: 100vh;
@@ -17,12 +15,21 @@ html {
     position: fixed;
 }
 .Head {
-    background-color: rosybrown;
+    background-color: transparent;
     text-align: center;
     width: 1850px;
 }
 .info {
-    background-color: grey;
+    color: rgb(0, 0, 0);
+    background-color: transparent;
+    padding: 10px;
+}
+#essai {
+    color: red;
+    padding: 5px;
+}
+#usedletter {
+    color: black;
 }
 
 .start-button {
@@ -40,7 +47,7 @@ html {
     position: relative;
     width: 110px;
     left: 1730px;
-    bottom: 100px;
+    bottom: 270px;
     z-index: 2;
 }
 .bouton-menu {
@@ -103,21 +110,21 @@ html {
 .clavier1 {
     width: 1700px;
     position: relative; 
-    left: 100px;
+    left: 130px;
     top:150px;
     z-index: 2;
  }
  .clavier2 {
     width: 1300px;
     position: relative;
-    left: 300px;
+    left: 330px;
     top:150px;
     z-index: 2;
  }
  .clavier3 {
     width: 800px;
     position: relative;
-    left: 570px;
+    left: 600px;
     top:150px;
     z-index: 2;
  }
