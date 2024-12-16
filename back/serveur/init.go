@@ -3,7 +3,6 @@ package hangmanweb
 import (
 	"bufio"
 	"fmt"
-	"time"
 	"math/rand"
 	"os"
 
@@ -11,13 +10,12 @@ import (
 
 
 func (h *HANGMANWEB) WebInit() {
-	rand.Seed(time.Now().UnixNano())  // Initialiser la graine aléatoire une seule fois
 	h.RandomWord()
 
 	h.Usedletter =""
-	h.Erreur = 0
-	h.MotAdeviner = []string{}
-	h.MotIconnu = []string{}
+	h.Error = 0
+	h.SecretWord = []string{}
+	h.HiddenWord = []string{}
 
 	h.TemplateHome = "./web/templates/Home.html"
 	h.TemplatePlay = "./web/templates/Play.html"
@@ -31,14 +29,14 @@ func (h *HANGMANWEB) WebInit() {
 
 func (h *HANGMANWEB) Intiwordlist() {
 
-	wordFileEasy, err1 := os.Open("back/wordlist/words.txt")               //ouverture des differents fichier texte qui contienent les liste de mots des differents niveau
+	wordFileEasy, err1 := os.Open("back/wordlist/words.txt")               //ouverture des differents fichier texte qui contienent les liste de Words des differents niveau
 
 	wordFileMedium, err2 := os.Open("back/wordlist/words2.txt")  
 	
 	wordFileHard, err3 := os.Open("back/wordlist/words3.txt")  
 
-	if err1 != nil || err2 != nil || err3 != nil {                   // si erreur ouverture d'un des fichier alors on les ferme tous et on 
-		fmt.Println("Erreur ouverture fichier:", err1, err2, err3)
+	if err1 != nil || err2 != nil || err3 != nil {                   // si Error ouverture d'un des fichier alors on les ferme tous et on 
+		fmt.Println("Error ouverture fichier:", err1, err2, err3)
 		wordFileEasy.Close()
 		wordFileMedium.Close()
 		wordFileHard.Close()
@@ -50,20 +48,20 @@ func (h *HANGMANWEB) Intiwordlist() {
 		for scanner.Scan() { 
 			h.WordlsitEasy = append(h.WordlsitEasy, scanner.Text())  
 		}
-		fmt.Println("WordlistEasy created successfully.")    //message indiquant la création de la liste mot avec succès
+		fmt.Println("WordlistEasy create successfully.")    //message indiquant la création de la liste Word avec succès
 		defer wordFileEasy.Close()                          // ferme le fichier texte en dernier grace au defer
 
 		for scanner2.Scan() {
 			h.WordlistMedium = append(h.WordlistMedium, scanner2.Text())
 		}
-		fmt.Println("WordlistMedium created successfully.")
+		fmt.Println("WordlistMedium create successfully.")
 		defer wordFileMedium.Close()
 		
 
 		for scanner3.Scan() {
 			h.wordlistHard = append(h.wordlistHard, scanner3.Text())
 		}
-		fmt.Println("WordlistHard created successfully.")
+		fmt.Println("WordlistHard create successfully.")
 		defer wordFileHard.Close() 
 	}
 
@@ -72,16 +70,16 @@ func (h *HANGMANWEB) Intiwordlist() {
 
 func (h *HANGMANWEB) RandomWord() {            		// fonction qui génére un 3 nombres aléatoires qui permettront 	
 	rdmEasy := rand.Intn(len(h.WordlsitEasy))	// Générer un nombre aléatoire entre 0 et la longeur de worlist easy 
-	h.MotEasy = h.WordlsitEasy[rdmEasy] 
-	fmt.Println("mot aléatoire easy crée")
+	h.WordEasy = h.WordlsitEasy[rdmEasy] 
+	fmt.Println("easy word was created succesfully")
 
 	rdmMedium := rand.Intn(len(h.WordlistMedium))
-	h.MotMedium = h.WordlistMedium[rdmMedium]
-	fmt.Println("mot aléatoire medium crée")
+	h.WordMedium = h.WordlistMedium[rdmMedium]
+	fmt.Println("medium word was created succesfully")
 
 	rdmHard := rand.Intn(len(h.wordlistHard))
-	h.MotHard = h.wordlistHard[rdmHard]	
-	fmt.Println("mot aléatoire hard crée")
+	h.WordHard = h.wordlistHard[rdmHard]	
+	fmt.Println("hard word was created succesfully")
 	
 }
 

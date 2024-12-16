@@ -15,8 +15,8 @@
         </div>
         <div class="information">
             <section class="info">
-                <h1 id="essai">Erreures : {{.Essai}} /10</h1>
-                <h2 id="motadeviner">Mot a deviner: {{.MotInconnu}}</h2>
+                <h1 id="essai">Erreures : {{.Attemps}} /10</h1>
+                <h2 id="motadeviner">Mot a deviner: {{.HiddenWord}}</h2>
                 <br>
                 <h2 id="usedletter">Lettres utilisées :{{.Usedletter}}</h2>
                 <br>
@@ -34,7 +34,7 @@
             </div>
         </form>
         <div class="image-container">
-            <img src="/utiles/etat{{.Essai}}.png" alt="État du pendu" class="pendu-image">
+            <img src="/utiles/etat{{.Attemps}}.png" alt="État du pendu" class="pendu-image">
         </div>
         <form class="clavier" action="/hangman">
             <div class="clavier1">

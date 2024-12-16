@@ -1,10 +1,10 @@
 package hangmanweb
 
 
-type Donnees struct {   // structure contenant les donnée a afficher dans les templates html
-	Essai      int      //nombre d'essai entre 0 et 10 inclu 
-	Mot        string   // mot a deviner DEBBUGAGE A SUPPRIMER 
-	MotInconnu string   // Mot inconnue donc afficher sous la forme "a _ _ a _ _ " qui correspond a la variable MotInconnu de type []string
+type DataStruct struct {   // structure contenant les donnée a afficher dans les templates html
+	Attemps      int      //nombre d'essai entre 0 et 10 inclu 
+	Word        string   // Word a deviner DEBBUGAGE A SUPPRIMER 
+	HiddenWord string   // Word inconnue donc afficher sous la forme "a _ _ a _ _ " qui correspond a la variable WordInconnu de type []string
 	Usedletter string   // lettre utiliser 
 }
 
@@ -15,25 +15,25 @@ type HANGMANWEB struct {
 	TemplateWin          string
 	TemplateLoose        string
 
-	//variables pour les list de mot easy, medium et hard 
-	WordlsitEasy       []string // liste de mot easy
-	WordlistMedium     []string  // liste de mot medium
-	wordlistHard       []string  // liste de mot hard
+	//variables pour les list de Word easy, medium et hard 
+	WordlsitEasy       []string // liste de Word easy
+	WordlistMedium     []string  // liste de Word medium
+	wordlistHard       []string  // liste de Word hard
 
-	// mot a deviner pour chaque niveau type string
-	MotEasy            string
-	MotMedium          string
-	MotHard            string
-	Mot                string
+	// Word a deviner pour chaque niveau type string
+	WordEasy            string
+	WordMedium          string
+	WordHard            string
+	Word                string
 
-	// tableau de string pour comparer les lettre du mot a deviner et celle entrée par le joueur 
-	MotAdeviner        []string   // mot a deviener de type [c a n a r d]
-	MotIconnu          []string    // mot inconnu de type  [c a _ a _ d]
+	// tableau de string pour comparer les lettre du Word a deviner et celle entrée par le joueur 
+	SecretWord        []string   // Word a deviener de type [c a n a r d]
+	HiddenWord          []string    // Word inconnu de type  [c a _ a _ d]
 
 	
 	// variable des requêtes lettre entrée et  niveau choisis et used letter
 	LevelActual        string
-	Erreur             int
+	Error             int
 	Usedletter         string
 
 

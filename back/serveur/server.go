@@ -28,41 +28,41 @@ func (h *HANGMANWEB) Loose(w http.ResponseWriter, r *http.Request) {
 func(h *HANGMANWEB) Request(w http.ResponseWriter, r *http.Request, html string)  {
 	r.ParseForm()
 	tmpl := template.Must(template.ParseFiles(html))
-	niveau := r.Form.Get("level")                                             // gestion des requêtes Get faite par le joueur 
-	boutonMenu := r.Form.Get("bouton-menu")
+	Level := r.Form.Get("level")                                             // gestion des requêtes Get faite par le joueur 
+	button := r.Form.Get("bouton-menu")
 	lettre := r.Form.Get("lettre")
 
-	if boutonMenu == "restart" {
-		niveau = h.LevelActual   // permet de garder en mémoire le niveau actuel cette variable n'est pas réintialiser dans la fonction h.webinit()
+	if button == "restart" {
+		Level = h.LevelActual   // permet de garder en mémoire le Level actuel cette variable n'est pas réintialiser dans la fonction h.webinit()
 		h.WebInit()
 		
-	} else if boutonMenu == "home" {
+	} else if button == "home" {
 		h.WebInit()
 	}
 	
-	switch niveau {
+	switch Level {
 	case "easy" :
-		h.Mot = h.MotEasy		
-		h.InitMotADeviner(h.Mot)       //fonction qui mettra chaque charactére du mot dans un tableau qui sera utiliser pour la comparaisont
+		h.Word = h.WordEasy		
+		h.InitSecretWord(h.Word)       //fonction qui mettra chaque charactére du Word dans un tableau qui sera utiliser pour la comparaisont
 		h.LevelActual = "easy"
 	case "medium" :
-		h.Mot = h.MotMedium
-		h.InitMotADeviner(h.Mot)         //fonction qui mettra chaque charactére du mot dans un tableau qui sera utiliser pour la comparaisont
+		h.Word = h.WordMedium
+		h.InitSecretWord(h.Word)         //fonction qui mettra chaque charactére du Word dans un tableau qui sera utiliser pour la comparaisont
 		h.LevelActual = "medium"
 	case "hard":
-		h.Mot = h.MotHard
-		h.InitMotADeviner(h.Mot)         //fonction qui mettra chaque charactére du mot dans un tableau qui sera utiliser pour la comparaisont
+		h.Word = h.WordHard
+		h.InitSecretWord(h.Word)         //fonction qui mettra chaque charactére du Word dans un tableau qui sera utiliser pour la comparaisont
 		h.LevelActual = "hard"
 	}
 		h.TestLetter(w, r, lettre)
 	
 	
 	
-	Data := Donnees{
-		Mot: h.Mot,
-		Essai: h.Erreur,
+	Data := DataStruct{
+		Word: h.Word,
+		Attemps: h.Error,
 		Usedletter: h.Usedletter,
-		MotInconnu: strings.Join(h.MotIconnu, " "),  // ligne un peu particuliere qui permet de convertir un tableau de string en string car html n'affiche pas les tableau 
+		HiddenWord: strings.Join(h.HiddenWord, " "),  // ligne un peu particuliere qui permet de convertir un tableau de string en string car html n'affiche pas les tableau 
 	}
 	
 	
