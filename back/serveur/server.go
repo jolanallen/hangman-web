@@ -13,6 +13,7 @@ func (h *HANGMANWEB) Home(w http.ResponseWriter, r *http.Request) {   // fonctio
 }
 
 func (h *HANGMANWEB) Play(w http.ResponseWriter, r *http.Request) {
+
 	h.Request(w, r, h.TemplatePlay)
 	
 }
